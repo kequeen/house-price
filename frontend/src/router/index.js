@@ -1,36 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-const routes = [
-  {
-    path: '/',
-    name: 'Dashboard',
-    component: () => import('../views/Dashboard.vue')
-  },
-  {
-    path: '/transactions',
-    name: 'Transactions',
-    component: () => import('../views/Transactions.vue')
-  },
-  {
-    path: '/import',
-    name: 'DataImport',
-    component: () => import('../views/DataImport.vue')
-  },
-  {
-    path: '/crawler',
-    name: 'Crawler',
-    component: () => import('../views/Crawler.vue')
-  },
-  {
-    path: '/government',
-    name: 'GovernmentData',
-    component: () => import('../views/GovernmentData.vue')
-  }
-]
-
-const router = createRouter({
+export default createRouter({
   history: createWebHistory(),
-  routes
+  routes: [
+    { path: '/', component: () => import('../views/Dashboard.vue') },
+    { path: '/housing', component: () => import('../views/Housing.vue') },
+    { path: '/sources', component: () => import('../views/Sources.vue') },
+    { path: '/government', redirect: '/' },
+    { path: '/crawler', redirect: '/sources' },
+    { path: '/import', redirect: '/sources' },
+    { path: '/transactions', redirect: '/housing' },
+    { path: '/:pathMatch(.*)*', redirect: '/' }
+  ]
 })
-
-export default router

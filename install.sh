@@ -1,20 +1,9 @@
 #!/bin/bash
-
-echo "=== 安装房价分析系统依赖 ==="
-
+set -euo pipefail
 cd "$(dirname "$0")"
-
-echo "安装后端依赖..."
-cd backend
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-cd ..
-
-echo "安装前端依赖..."
-cd frontend
-npm install
-cd ..
-
-echo "=== 安装完成 ==="
-echo "运行 ./start.sh 启动服务"
+python3 -c 'import sys; assert sys.version_info >= (3,10), "需要Python 3.10+"'
+node -e 'if (Number(process.versions.node.split(".")[0]) < 18) throw new Error("需要Node.js 18+")'
+if [ ! -d backend/.venv ]; then python3 -m venv backend/.venv; fi
+backend/.venv/bin/python -m pip install -r backend/requirements.txt
+(cd frontend && npm ci)
+echo "依赖安装完成，运行 ./start.sh；官方数据可在页面或sync_official.py中同步。"

@@ -23,3 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 *.pyc
+
+# 原始数据库保留为历史资料，官方数据由同步命令重建
+backups/
+backend/data/
+backend/house_price.db
+*.db-wal
+*.db-shm
+__pycache__/

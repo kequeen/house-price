@@ -1,31 +1,38 @@
-from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
-
+from sqlalchemy import create_engine, event
+from sqlalchemy.orm import DeclarativeBase, sessionmaker
 from app.config import settings
 
-engine = create_engine(
-    settings.DATABASE_URL, connect_args={"check_same_thread": False}
-)
+settings.DATA_DIR.mkdir(parents=True, exist_ok=True)
+engine = create_engine(settings.DATABASE_URL, connect_args={'check_same_thread': False, 'timeout': 30} if settings.DATABASE_URL.startswith('sqlite') else {})
 
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-Base = declarative_base()
+if settings.DATABASE_URL.startswith('sqlite'):
+    @event.listens_for(engine, 'connect')
+    def configure_sqlite(connection, _):
+        connection.execute('PRAGMA foreign_keys=ON')
+        connection.execute('PRAGMA busy_timeout=30000')
+
+
+SessionLocal = sessionmaker(bind=engine, expire_on_commit=False)
+
+
+class Base(DeclarativeBase):
+    pass
 
 
 def get_db():
-    db = SessionLocal()
-    try:
+    with SessionLocal() as db:
         yield db
-    finally:
-        db.close()
 
 
 def init_db():
-    from app.models import transaction, region
-    Base.metadata.create_all(bind=engine)
-
-
-def reset_db():
-    Base.metadata.drop_all(bind=engine)
-    Base.metadata.create_all(bind=engine)
+    from app.models.official import City, SchemaVersion
+    from app.catalog import CITY_CATALOG
+    Base.metadata.create_all(engine)
+    with SessionLocal() as db:
+        if db.get(SchemaVersion, 1) is None:
+            db.add(SchemaVersion(version=1))
+        for city, details in CITY_CATALOG.items():
+            if db.get(City, city) is None:
+                db.add(City(name=city, **details))
+        db.commit()

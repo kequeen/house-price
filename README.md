@@ -1,200 +1,99 @@
-# 房价分析系统
+# 城市住宅观察
 
-一个完整的房价数据分析系统，支持从链家等平台采集数据，导入房管局数据，获取政府公开统计数据，并提供可视化分析界面。
+以国家统计局和地方住建部门公开数据为基础，观察住宅价格变化与成交情况。面向个人研究，本地运行。
 
-## 功能特点
+## 已实现的范围
 
-- **数据采集**：支持从链家网站采集成交数据
-- **政府数据**：获取国家统计局70城房价变动数据
-- **数据导入**：支持CSV、Excel格式的房管局数据导入
-- **数据分析**：按年/月/区域统计成交量和成交价
-- **可视化展示**：价格趋势图、成交量趋势图、区域对比图
-- **RESTful API**：完整的后端API接口
+- **价格趋势**：国家统计局70城新建商品住宅、二手住宅月度价格指数。界面覆盖官方分类的4个一线、31个二线城市，每城有最近24个月同比折线图，主图支持最多8城对比。
+- **指标**：同比变化、环比变化、所选起始月=100的相对指数。相对指数由官方环比连乘计算，有取整误差，明确区别于官方定基指数。
+- **住建成交**：北京明确标注月份的住宅网签及年度住宅统计；石家庄月度新建住宅、存量住房网签套数与面积。
+- **可追溯**：每笔观测关联官方URL、公告标题、采集时间、SHA256、解析版本和原始HTML快照；导出CSV保留来源。
+- **更新**：页面或CLI按月同步，校验后入库，重复同步不重复计数；支持官方修订重新抓取、失败明细、持久化进度和同步互斥。
 
-## 技术栈
+2026-10-03首次实采取得国家统计局**2023-01至2026-08，共44个月、6,160条70城观测**；其中一、二线35城有3,080条观测。住建数据有93条：石家庄2023-01至2026-08的88条，北京2023/2024年度4条及2025-10月度1条。这是当次快照，不保证源站后续公布或修订情况。
 
-### 后端
-- Python 3.10+
-- FastAPI - Web框架
-- SQLAlchemy - ORM
-- SQLite - 数据库
-- BeautifulSoup4 - 网页解析
-- Pandas - 数据处理
+## 数据边界
 
-### 前端
-- Vue 3 - 前端框架
-- Element Plus - UI组件库
-- ECharts - 图表库
-- Vite - 构建工具
+1. 价格指数反映价格变化，**不是元/平方米的成交均价**。本项目不从指数推算绝对售价、成交量或成交金额。
+2. 一、二线采用[国家统计局70城分类](https://www.stats.gov.cn/sj/sjjd/202609/t20260915_1965303.html)，不是商业“新一线”榜单。苏州、东莞等不在这份70城价格样本中。
+3. 石家庄成交表范围是表内列出的8个区，不能表述为全部行政市。北京年度原表单位为万套/万平方米，已换算，原数据存在取整。
+4. 北京统计网页有滞后，采集时间不等于数据期间。月度、年度分别展示；不把每日快照写成月度累计。
+5. 上海、深圳部分住建入口本次返回动态验证页，广州可持续月表尚未核验，界面明确标为尚未接入。**不代表35城都已有住建成交量**。
+6. 缺失和解析失败保留为缺失或错误，不填零、不生成模拟数据。折线在缺失月断开；相对指数断档后停止连乘，不自动重新基准化。
 
-## 项目结构
+## 安装与启动
 
-```
-house-price/
-├── backend/                 # 后端代码
-│   ├── app/
-│   │   ├── api/            # API接口
-│   │   ├── crawlers/       # 爬虫模块
-│   │   ├── fetchers/       # 政府数据获取
-│   │   ├── models/         # 数据模型
-│   │   ├── schemas/        # 数据验证
-│   │   ├── config.py       # 配置
-│   │   ├── database.py     # 数据库
-│   │   └── main.py         # 入口
-│   ├── requirements.txt
-│   └── .env.example
-├── frontend/               # 前端代码
-│   ├── src/
-│   │   ├── api/           # API调用
-│   │   ├── router/        # 路由
-│   │   ├── views/         # 页面
-│   │   ├── App.vue
-│   │   └── main.js
-│   ├── package.json
-│   └── vite.config.js
-├── start.sh               # 启动脚本
-└── install.sh             # 安装脚本
-```
-
-## 快速开始
-
-### 1. 安装依赖
+需要Python 3.10+、Node.js 18+。
 
 ```bash
-chmod +x install.sh start.sh
 ./install.sh
-```
-
-或手动安装：
-
-```bash
-# 后端
-cd backend
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-
-# 前端
-cd ../frontend
-npm install
-```
-
-### 2. 启动服务
-
-```bash
 ./start.sh
 ```
 
-或手动启动：
+- 页面：http://127.0.0.1:5173
+- API：http://127.0.0.1:8000
+- API文档：http://127.0.0.1:8000/docs
+
+启动只监听本机。前端开发服务代理`/api`到后端。Ctrl+C关闭两项服务；端口已占用时会报错，不会静默改端口。可用`BACKEND_PORT=8002 FRONTEND_PORT=5174 ./start.sh`指定端口。
+
+首次使用没有官方数据时，前往“数据来源”页同步，或者：
 
 ```bash
-# 后端
 cd backend
-source .venv/bin/activate
-uvicorn app.main:app --reload --port 8000
+.venv/bin/python sync_official.py --start 2023-01
 
-# 前端（新终端）
-cd frontend
-npm run dev
+# 确定历史范围、只获取国家统计局数据
+.venv/bin/python sync_official.py --start 2023-01 --end 2026-08 --price-only
+
+# 重新核验源站修订，旧快照保留
+.venv/bin/python sync_official.py --start 2026-01 --refresh
 ```
 
-### 3. 访问系统
+同步最长61个月，更多历史请分批。结束月份只能到最近已结束月份，官方尚未发布的月份不会编造数据。CLI退出码：0完成、2部分完成、1失败；完整原因保存在数据库和页面同步记录中。
 
-- 前端界面：http://localhost:5173
-- 后端API：http://localhost:8000
-- API文档：http://localhost:8000/docs
+## 项目结构
 
-## 数据来源
+```text
+backend/
+  app/
+    catalog.py             # 官方城市分类、已核查住建渠道
+    collectors/            # 限速HTTP、国家统计局和住建表格解析
+    models/official.py     # 城市、来源凭证、价格/成交观测、同步任务
+    services/              # 幂等入库、同步流程、序列计算
+    api/market.py          # 查询、导出、数据来源和同步接口
+    main.py                # FastAPI入口
+  tests/                   # 官方HTML回归样本、API及存储测试
+  sync_official.py         # 数据更新CLI
+  data/                    # 运行数据库、HTTP缓存和原始快照（Git忽略）
+frontend/
+  src/
+    components/            # 主折线图及城市缩略图
+    views/                 # 价格趋势、住建成交、数据来源
+docs/
+  architecture.md          # 数据约束与维护说明
+  verification.md          # 本次实采和验证记录
+```
 
-### 1. 政府公开数据（推荐）
+## 数据存储与备份
 
-系统支持获取国家统计局公布的70个大中城市房价变动数据：
+默认使用`backend/data/official.db`，路径相对于项目定位，不依赖启动目录。`.env`可配置`DATABASE_URL`、`DATA_DIR`、`REQUEST_INTERVAL`、`DEFAULT_START_PERIOD`。
 
-- **数据来源**：国家统计局月度数据
-- **覆盖城市**：70个大中城市
-- **数据内容**：新房/二手房成交量、平均价格、价格变动指数
-- **更新频率**：月度
+旧的`backend/house_price.db`保持原样，**不会读取到新界面**。重构前的源码、数据库和未提交差异已备份至`backups/20261003-113620/`，包含校验清单。旧模拟生成器、商业爬虫和无出处的手工年度价格表已退出运行代码，原版可在备份中恢复。
+
+官方运行数据和快照不进Git，新检出后需要同步。备份时应同时保存`backend/data/official.db`与`backend/data/raw/`。数据库使用独立新schema v1；不自动改写旧表。
+
+## 验证
 
 ```bash
-# 获取政府数据
 cd backend
-source .venv/bin/activate
-python -c "from app.fetchers.government_data import fetch_government_data; fetch_government_data()"
+.venv/bin/python -B -m unittest discover -s tests -v
+
+cd ../frontend
+npm run build
 ```
 
-### 2. 链家数据采集
+测试只使用内存数据库和保存的官方HTML，覆盖来源解析、移动/桌面重复表、统计期间、住宅口径、单位换算、幂等更新、修订凭证、缺失月份、同步互斥、35城完整查询与CSV来源。
 
-支持从链家网站采集成交数据（需注意反爬限制）
+接口包括`/api/overview`、`/api/cities`、`/api/series`、`/api/observations`、`/api/housing`、`/api/sources`、`/api/documents`、`/api/export/prices`、`POST /api/sync`、`GET /api/sync/{id}`。
 
-### 3. 手动导入
-
-支持CSV和Excel格式的数据导入，适用于房管局公布的网签数据
-
-## API接口
-
-### 成交数据
-
-| 方法 | 接口 | 说明 |
-|------|------|------|
-| GET | /api/transactions | 获取成交列表 |
-| GET | /api/transactions/stats/monthly | 月度统计 |
-| GET | /api/transactions/stats/regions | 区域统计 |
-| GET | /api/transactions/trends/price | 价格趋势 |
-| GET | /api/transactions/trends/volume | 成交量趋势 |
-
-### 政府数据
-
-| 方法 | 接口 | 说明 |
-|------|------|------|
-| GET | /api/government/summary | 数据概览 |
-| GET | /api/government/stats/cities | 城市统计 |
-| GET | /api/government/rankings | 城市排行 |
-| GET | /api/government/trend/{city} | 城市趋势 |
-| GET | /api/government/compare | 城市对比 |
-
-### 数据导入
-
-| 方法 | 接口 | 说明 |
-|------|------|------|
-| POST | /api/data/import/csv | 导入CSV |
-| POST | /api/data/import/excel | 导入Excel |
-| GET | /api/data/template | 获取导入模板 |
-
-### 数据采集
-
-| 方法 | 接口 | 说明 |
-|------|------|------|
-| POST | /api/crawler/start | 启动爬虫 |
-| GET | /api/crawler/status | 爬虫状态 |
-| GET | /api/crawler/cities | 支持的城市 |
-
-## 数据格式
-
-导入数据支持以下字段：
-
-| 字段 | 说明 | 必填 |
-|------|------|------|
-| region | 区域 | 是 |
-| district | 片区 | 否 |
-| community | 小区名称 | 否 |
-| transaction_date | 成交日期 | 否 |
-| price | 成交总价(万元) | 否 |
-| unit_price | 单价(元/平米) | 否 |
-| area | 面积(平米) | 否 |
-| property_type | 物业类型 | 否 |
-| floor | 楼层 | 否 |
-| orientation | 朝向 | 否 |
-| decoration | 装修情况 | 否 |
-| bedrooms | 卧室数量 | 否 |
-| living_rooms | 客厅数量 | 否 |
-
-## 注意事项
-
-1. 爬虫仅供学习研究使用，请遵守网站使用条款
-2. 建议在非高峰时段运行爬虫
-3. 数据采集已做限速处理
-4. 政府数据为模拟数据，真实数据需从国家统计局官网获取
-
-## License
-
-MIT
+后端后台任务与CLI共用数据库同步锁。中断任务30分钟无心跳后，下一次同步释放锁；正常运行只启动一个Web进程。没有外部任务队列，也没有未经用户配置的定时任务。

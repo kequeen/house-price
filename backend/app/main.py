@@ -1,14 +1,23 @@
-from fastapi import FastAPI
+from contextlib import asynccontextmanager
+from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
-
+from sqlalchemy import text
+from sqlalchemy.orm import Session
 from app.config import settings
-from app.database import init_db
-from app.api import transactions, data_import, crawler, government
+from app.database import init_db, get_db
+from app.api.market import router
+
+
+@asynccontextmanager
+async def lifespan(app):
+    init_db()
+    yield
 
 app = FastAPI(
     title=settings.APP_NAME,
     version=settings.APP_VERSION,
-    description="房价数据分析系统API"
+    description='官方住宅价格指数与地方住建成交数据。所有观测保留来源与原始快照。',
+    lifespan=lifespan,
 )
 
 app.add_middleware(
@@ -19,15 +28,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(transactions.router)
-app.include_router(data_import.router)
-app.include_router(crawler.router)
-app.include_router(government.router)
-
-
-@app.on_event("startup")
-async def startup_event():
-    init_db()
+app.include_router(router)
 
 
 @app.get("/")
@@ -40,5 +41,6 @@ async def root():
 
 
 @app.get("/health")
-async def health_check():
-    return {"status": "healthy"}
+def health_check(db: Session = Depends(get_db)):
+    db.execute(text('SELECT 1'))
+    return {'status': 'healthy', 'version': settings.APP_VERSION}

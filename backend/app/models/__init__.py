@@ -1,4 +1,3 @@
-from app.models.transaction import Transaction
-from app.models.region import RegionStats, CityMonthlyStats
+from app.models.official import City, HousingObservation, PriceObservation, SchemaVersion, SourceDocument, SyncRun
 
-__all__ = ['Transaction', 'RegionStats', 'CityMonthlyStats']
+__all__ = ['City', 'HousingObservation', 'PriceObservation', 'SchemaVersion', 'SourceDocument', 'SyncRun']
