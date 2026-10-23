@@ -42,7 +42,8 @@ def main():
     ox, oy = (750-(maxx-minx)*scale)/2, 15
     def project(p):
         x,y=albers(p)
-        return round(ox+(x-minx)*scale,2),round(oy+(y-miny)*scale,2)
+        # Geographic north increases y; SVG screen coordinates increase downward.
+        return round(ox+(x-minx)*scale,2),round(oy+(maxy-y)*scale,2)
     shapes=[]
     inset=[]
     def ring_path(ring, inset_mode=False):

@@ -21,7 +21,7 @@
 
 逐行读取并复核两张主表；用销售额(亿元) ÷ 面积(万平方米) × 10000，复算31省住宅价格。与官方均价的最大差为0.7839元/平方米，来自原表舍入。原表留存在 `data/raw/`，结构化记录含每条来源、统计期与校验差。核对日期：2026-10-23。
 
-地图原始边界为[阿里云DataV GeoAtlas全国省级数据](https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json)，原始文件留存于 `data/china-provinces.geojson`。投影为Albers等积投影，南海诸岛单列示意小窗。港澳台没有本次同口径数据，灰色表示未覆盖而非零。
+地图原始边界为[阿里云DataV GeoAtlas全国省级数据](https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json)，原始文件留存于 `data/china-provinces.geojson`。投影为Albers等积投影，按上北下南、左西右东绘制，并保持横纵比例一致；南海诸岛单列示意小窗。港澳台没有本次同口径数据，灰色表示未覆盖而非零。
 
 ## 交互
 
