@@ -14,10 +14,10 @@
   "scope": "中国大陆31个省、自治区和直辖市；不含港澳台。省级综合数据，不代表省会或辖区内任一城市。",
   "priceDefinition": "房地产开发企业新建商品住宅平均销售价格，元/平方米；覆盖期房及现房，不包含二手住宅。",
   "incomeDefinition": "城镇居民人均可支配收入，元/人/年；包含所有家庭成员平均收入，不等于就业人员工资。",
-  "formula": "房价收入比（年）=新建商品住宅平均销售价格×住宅面积÷（城镇居民人均可支配收入×家庭人口）",
+  "formula": "房价收入比（倍）=新建商品住宅平均销售价格×住宅面积÷（城镇居民人均可支配收入×家庭人口）",
   "defaultScenario": {
     "areaSqm": 90,
-    "householdPersons": 3
+    "householdPersons": 1
   },
   "limitations": [
     "房价与收入均为2024年统计数据，不是实时市场报价。",
@@ -82,7 +82,7 @@
     "residentialSalesAmount100mYuan": 84864.09,
     "priceSource": "https://www.stats.gov.cn/sj/ndsj/2025/html/C19-11.jpg",
     "incomeSource": "https://www.stats.gov.cn/sj/ndsj/2025/html/C06-24.jpg",
-    "defaultRatio90sqm3persons": 5.7683
+    "defaultRatio90sqm1person": 17.3048
   },
   "records": [
     {
@@ -103,7 +103,7 @@
       "residentialSalesAmount100mYuan": 3038.63,
       "crossCheckPriceFromRoundedSales": 38673.1915,
       "crossCheckDifference": -0.1915,
-      "defaultRatio90sqm3persons": 12.5475
+      "defaultRatio90sqm1person": 37.6424
     },
     {
       "code": "120000",
@@ -123,7 +123,7 @@
       "residentialSalesAmount100mYuan": 1658.91,
       "crossCheckPriceFromRoundedSales": 14966.8438,
       "crossCheckDifference": 0.1562,
-      "defaultRatio90sqm3persons": 7.7811
+      "defaultRatio90sqm1person": 23.3434
     },
     {
       "code": "130000",
@@ -143,7 +143,7 @@
       "residentialSalesAmount100mYuan": 3146.44,
       "crossCheckPriceFromRoundedSales": 8201.308,
       "crossCheckDifference": -0.308,
-      "defaultRatio90sqm3persons": 5.3942
+      "defaultRatio90sqm1person": 16.1826
     },
     {
       "code": "140000",
@@ -163,7 +163,7 @@
       "residentialSalesAmount100mYuan": 1282.08,
       "crossCheckPriceFromRoundedSales": 6871.1814,
       "crossCheckDifference": -0.1814,
-      "defaultRatio90sqm3persons": 4.7897
+      "defaultRatio90sqm1person": 14.3691
     },
     {
       "code": "150000",
@@ -183,7 +183,7 @@
       "residentialSalesAmount100mYuan": 838.53,
       "crossCheckPriceFromRoundedSales": 6546.5149,
       "crossCheckDifference": 0.4851,
-      "defaultRatio90sqm3persons": 3.8597
+      "defaultRatio90sqm1person": 11.579
     },
     {
       "code": "210000",
@@ -203,7 +203,7 @@
       "residentialSalesAmount100mYuan": 1295.47,
       "crossCheckPriceFromRoundedSales": 7509.1874,
       "crossCheckDifference": -0.1874,
-      "defaultRatio90sqm3persons": 4.6949
+      "defaultRatio90sqm1person": 14.0847
     },
     {
       "code": "220000",
@@ -223,7 +223,7 @@
       "residentialSalesAmount100mYuan": 558.54,
       "crossCheckPriceFromRoundedSales": 6597.6045,
       "crossCheckDifference": 0.3955,
-      "defaultRatio90sqm3persons": 5.055
+      "defaultRatio90sqm1person": 15.1651
     },
     {
       "code": "230000",
@@ -243,7 +243,7 @@
       "residentialSalesAmount100mYuan": 412.72,
       "crossCheckPriceFromRoundedSales": 6157.243,
       "crossCheckDifference": -0.243,
-      "defaultRatio90sqm3persons": 4.8338
+      "defaultRatio90sqm1person": 14.5015
     },
     {
       "code": "310000",
@@ -263,7 +263,7 @@
       "residentialSalesAmount100mYuan": 6406.87,
       "crossCheckPriceFromRoundedSales": 47222.8815,
       "crossCheckDifference": 0.1185,
-      "defaultRatio90sqm3persons": 15.2177
+      "defaultRatio90sqm1person": 45.653
     },
     {
       "code": "320000",
@@ -283,7 +283,7 @@
       "residentialSalesAmount100mYuan": 9258.79,
       "crossCheckPriceFromRoundedSales": 11162.9828,
       "crossCheckDifference": 0.0172,
-      "defaultRatio90sqm3persons": 5.0608
+      "defaultRatio90sqm1person": 15.1825
     },
     {
       "code": "330000",
@@ -303,7 +303,7 @@
       "residentialSalesAmount100mYuan": 7668.26,
       "crossCheckPriceFromRoundedSales": 17753.1087,
       "crossCheckDifference": -0.1087,
-      "defaultRatio90sqm3persons": 6.8062
+      "defaultRatio90sqm1person": 20.4185
     },
     {
       "code": "340000",
@@ -323,7 +323,7 @@
       "residentialSalesAmount100mYuan": 2626.56,
       "crossCheckPriceFromRoundedSales": 7772.1293,
       "crossCheckDifference": -0.1293,
-      "defaultRatio90sqm3persons": 4.7066
+      "defaultRatio90sqm1person": 14.1198
     },
     {
       "code": "350000",
@@ -343,7 +343,7 @@
       "residentialSalesAmount100mYuan": 2803.23,
       "crossCheckPriceFromRoundedSales": 11538.2526,
       "crossCheckDifference": -0.2526,
-      "defaultRatio90sqm3persons": 5.8904
+      "defaultRatio90sqm1person": 17.6713
     },
     {
       "code": "360000",
@@ -363,7 +363,7 @@
       "residentialSalesAmount100mYuan": 1731.65,
       "crossCheckPriceFromRoundedSales": 6998.8845,
       "crossCheckDifference": 0.1155,
-      "defaultRatio90sqm3persons": 4.4191
+      "defaultRatio90sqm1person": 13.2574
     },
     {
       "code": "370000",
@@ -383,7 +383,7 @@
       "residentialSalesAmount100mYuan": 6647.36,
       "crossCheckPriceFromRoundedSales": 8269.0435,
       "crossCheckDifference": -0.0435,
-      "defaultRatio90sqm3persons": 4.5886
+      "defaultRatio90sqm1person": 13.7659
     },
     {
       "code": "410000",
@@ -403,7 +403,7 @@
       "residentialSalesAmount100mYuan": 3632.65,
       "crossCheckPriceFromRoundedSales": 6279.9941,
       "crossCheckDifference": 0.0059,
-      "defaultRatio90sqm3persons": 4.4828
+      "defaultRatio90sqm1person": 13.4485
     },
     {
       "code": "420000",
@@ -423,7 +423,7 @@
       "residentialSalesAmount100mYuan": 3709.22,
       "crossCheckPriceFromRoundedSales": 8247.1279,
       "crossCheckDifference": -0.1279,
-      "defaultRatio90sqm3persons": 5.2655
+      "defaultRatio90sqm1person": 15.7965
     },
     {
       "code": "430000",
@@ -443,7 +443,7 @@
       "residentialSalesAmount100mYuan": 2468.54,
       "crossCheckPriceFromRoundedSales": 6038.2075,
       "crossCheckDifference": -0.2075,
-      "defaultRatio90sqm3persons": 3.5349
+      "defaultRatio90sqm1person": 10.6048
     },
     {
       "code": "440000",
@@ -463,7 +463,7 @@
       "residentialSalesAmount100mYuan": 10338.88,
       "crossCheckPriceFromRoundedSales": 17550.2673,
       "crossCheckDifference": -0.2673,
-      "defaultRatio90sqm3persons": 8.5431
+      "defaultRatio90sqm1person": 25.6292
     },
     {
       "code": "450000",
@@ -483,7 +483,7 @@
       "residentialSalesAmount100mYuan": 1144.19,
       "crossCheckPriceFromRoundedSales": 5926.3269,
       "crossCheckDifference": -0.3269,
-      "defaultRatio90sqm3persons": 4.1302
+      "defaultRatio90sqm1person": 12.3906
     },
     {
       "code": "460000",
@@ -503,7 +503,7 @@
       "residentialSalesAmount100mYuan": 1238.0,
       "crossCheckPriceFromRoundedSales": 14765.693,
       "crossCheckDifference": 0.307,
-      "defaultRatio90sqm3persons": 9.998
+      "defaultRatio90sqm1person": 29.9939
     },
     {
       "code": "500000",
@@ -523,7 +523,7 @@
       "residentialSalesAmount100mYuan": 1587.33,
       "crossCheckPriceFromRoundedSales": 8243.1724,
       "crossCheckDifference": -0.1724,
-      "defaultRatio90sqm3persons": 4.9679
+      "defaultRatio90sqm1person": 14.9036
     },
     {
       "code": "510000",
@@ -543,7 +543,7 @@
       "residentialSalesAmount100mYuan": 4584.11,
       "crossCheckPriceFromRoundedSales": 9769.6598,
       "crossCheckDifference": 0.3402,
-      "defaultRatio90sqm3persons": 6.1919
+      "defaultRatio90sqm1person": 18.5757
     },
     {
       "code": "520000",
@@ -563,7 +563,7 @@
       "residentialSalesAmount100mYuan": 1034.22,
       "crossCheckPriceFromRoundedSales": 5538.0216,
       "crossCheckDifference": -0.0216,
-      "defaultRatio90sqm3persons": 3.7286
+      "defaultRatio90sqm1person": 11.1859
     },
     {
       "code": "530000",
@@ -583,7 +583,7 @@
       "residentialSalesAmount100mYuan": 1158.33,
       "crossCheckPriceFromRoundedSales": 7008.289,
       "crossCheckDifference": -0.289,
-      "defaultRatio90sqm3persons": 4.6398
+      "defaultRatio90sqm1person": 13.9195
     },
     {
       "code": "540000",
@@ -603,7 +603,7 @@
       "residentialSalesAmount100mYuan": 59.63,
       "crossCheckPriceFromRoundedSales": 9085.7839,
       "crossCheckDifference": -0.7839,
-      "defaultRatio90sqm3persons": 4.9158
+      "defaultRatio90sqm1person": 14.7473
     },
     {
       "code": "610000",
@@ -623,7 +623,7 @@
       "residentialSalesAmount100mYuan": 2428.82,
       "crossCheckPriceFromRoundedSales": 10972.7085,
       "crossCheckDifference": 0.2915,
-      "defaultRatio90sqm3persons": 7.0308
+      "defaultRatio90sqm1person": 21.0925
     },
     {
       "code": "620000",
@@ -643,7 +643,7 @@
       "residentialSalesAmount100mYuan": 778.54,
       "crossCheckPriceFromRoundedSales": 5789.3915,
       "crossCheckDifference": -0.3915,
-      "defaultRatio90sqm3persons": 4.1506
+      "defaultRatio90sqm1person": 12.4518
     },
     {
       "code": "630000",
@@ -663,7 +663,7 @@
       "residentialSalesAmount100mYuan": 150.37,
       "crossCheckPriceFromRoundedSales": 6647.6569,
       "crossCheckDifference": -0.6569,
-      "defaultRatio90sqm3persons": 4.7264
+      "defaultRatio90sqm1person": 14.1791
     },
     {
       "code": "640000",
@@ -683,7 +683,7 @@
       "residentialSalesAmount100mYuan": 321.77,
       "crossCheckPriceFromRoundedSales": 6578.6837,
       "crossCheckDifference": 0.3163,
-      "defaultRatio90sqm3persons": 4.4404
+      "defaultRatio90sqm1person": 13.3211
     },
     {
       "code": "650000",
@@ -703,7 +703,7 @@
       "residentialSalesAmount100mYuan": 855.47,
       "crossCheckPriceFromRoundedSales": 5590.8322,
       "crossCheckDifference": 0.1678,
-      "defaultRatio90sqm3persons": 3.9171
+      "defaultRatio90sqm1person": 11.7513
     }
   ],
   "verification": {

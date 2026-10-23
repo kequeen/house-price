@@ -7,10 +7,11 @@
   const records = D.records, byCode = new Map(records.map(r => [r.code, r]));
   const params = new URLSearchParams(location.search);
   const areas = [60,90,100,120,140,180];
+  const defaults = D.defaultScenario;
   const qArea = Number(params.get('area')), qPeople = Number(params.get('people'));
   const state = {
-    area:areas.includes(qArea) ? qArea : 90,
-    people:Number.isInteger(qPeople) && qPeople >= 1 && qPeople <= 6 ? qPeople : 3,
+    area:areas.includes(qArea) ? qArea : defaults.areaSqm,
+    people:Number.isInteger(qPeople) && qPeople >= 1 && qPeople <= 6 ? qPeople : defaults.householdPersons,
     selected:byCode.has(params.get('province')) ? params.get('province') : '310000',
     metric:['ratio','price','income'].includes(params.get('metric')) ? params.get('metric') : 'ratio',
     view:params.get('view') === 'scatter' ? 'scatter' : 'map',
@@ -66,7 +67,7 @@
     $('legend-min').textContent=state.metric==='ratio'?fmt(lo,1)+'倍':fmt(lo)+'元';
     $('legend-max').textContent=state.metric==='ratio'?fmt(hi,1)+'倍':fmt(hi)+'元';
     $('legend-caption').textContent=state.metric==='ratio'?'收入倍数由低到高':state.metric==='price'?'住宅单价由低到高':'城镇人均年收入由低到高';
-    $('chart-headline').textContent=state.view==='scatter'?'2024年 · 住宅价格与城镇人均收入':state.metric==='ratio'?'房价收入比 · 家庭年收入倍数':state.metric==='price'?'新建商品住宅销售均价 · 元/㎡':'城镇居民人均可支配收入 · 元/年';
+    $('chart-headline').textContent=state.view==='scatter'?'2024年 · 住宅价格与城镇人均收入':state.metric==='ratio'?`房价收入比 · ${state.people===1?'个人':'家庭'}年收入倍数`:state.metric==='price'?'新建商品住宅销售均价 · 元/㎡':'城镇居民人均可支配收入 · 元/年';
   }
   function renderScatter() {
     const x=n=>67+(n-30000)/70000*630,y=n=>390-n/55000*337;
@@ -112,6 +113,7 @@
   function render() {
     document.querySelectorAll('[data-scenario-area]').forEach(el=>el.textContent=state.area);
     document.querySelectorAll('[data-scenario-people]').forEach(el=>el.textContent=state.people);
+    document.querySelectorAll('[data-income-scope]').forEach(el=>el.textContent=state.people===1?'个人':'家庭');
     $('hero-ratio').textContent=fmt(nationalRatio(),2);
     $('scenario-area').value=state.area;$('scenario-people').value=state.people;$('map-metric').value=state.metric;
     document.querySelectorAll('[data-view]').forEach(el=>{el.classList.toggle('active',el.dataset.view===state.view);el.setAttribute('aria-pressed',String(el.dataset.view===state.view));});
@@ -151,7 +153,7 @@
   $('scenario-area').addEventListener('change',e=>{state.area=Number(e.target.value);render();if(!state.personalDirty)loadProvince();});
   $('scenario-people').addEventListener('change',e=>{state.people=Number(e.target.value);render();if(!state.personalDirty)loadProvince();});
   $('map-metric').addEventListener('change',e=>{state.metric=e.target.value;render();});
-  $('reset-scenario').addEventListener('click',()=>{state.area=90;state.people=3;render();if(!state.personalDirty)loadProvince();});
+  $('reset-scenario').addEventListener('click',()=>{state.area=defaults.areaSqm;state.people=defaults.householdPersons;render();if(!state.personalDirty)loadProvince();});
   $('region-search').addEventListener('input',e=>{state.search=e.target.value.trim();state.expanded=false;renderTable();renderMap();renderScatter();});
   $('region-filter').addEventListener('change',e=>{state.region=e.target.value;state.expanded=false;renderTable();renderMap();renderScatter();});
   $('table-sort').addEventListener('change',e=>{state.sort=e.target.value;renderTable();});
@@ -173,7 +175,7 @@
     const r=byCode.get(state.selected);
     $('personal-price').value=r.price;$('personal-area').value=state.area;
     $('personal-income').value=(r.urbanIncome*state.people/12).toFixed(2);
-    $('personal-source').textContent=`已带入${r.name}2024年统计参考：${state.people}人家庭。你可以改成具体城市、楼盘报价与实际家庭收入。`;
+    $('personal-source').textContent=`已带入${r.name}2024年统计参考：${state.people===1?'单人购房':state.people+'人家庭'}。你可以改成具体城市、楼盘报价与实际个人或家庭收入。`;
     state.personalDirty=false;calculatePersonal();
     if(scroll)$('calculator').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
   }
@@ -191,7 +193,7 @@
       $('personal-payment').textContent=fmt(result.monthly,0)+' 元/月';
       $('personal-payment-ratio').textContent=fmt(result.paymentRatio,1)+'%';
       $('payment-meter-fill').style.width=Math.min(result.paymentRatio,100)+'%';
-      $('personal-result-note').textContent=(result.paymentRatio>100?'当前假设月供超过家庭月收入。':'')+'结余保持不变、不计存款收益；贷款按固定利率等额本息计算，未计税费和其他购房支出。';
+      $('personal-result-note').textContent=(result.paymentRatio>100?'当前假设月供超过填写的月可支配收入。':'')+'结余保持不变、不计存款收益；贷款按固定利率等额本息计算，未计税费和其他购房支出。';
     }catch(error){
       $('personal-error').textContent=error.message;$('personal-error').hidden=false;outputIds.forEach(id=>$(id).textContent='—');$('payment-meter-fill').style.width='0%';
     }

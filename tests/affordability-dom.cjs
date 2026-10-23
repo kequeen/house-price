@@ -20,14 +20,14 @@ function check(name,fn){fn();checks.push(name);}
 check('initial render includes all 31 regions and correct national benchmark',()=>{
   assert.equal(d.querySelectorAll('#china-map .province-path:not(.no-data)').length,31);
   assert.equal(d.querySelectorAll('#scatter-chart .scatter-dot').length,31);
-  assert.equal($('hero-ratio').textContent,'5.77');assert.equal($('detail-name').textContent,'上海');
+  assert.equal($('hero-ratio').textContent,'17.30');assert.equal($('detail-name').textContent,'上海');
   assert.equal(d.querySelectorAll('#region-table-body tr').length,10);
   assert.equal($('personal-error').hidden,true);
 });
 check('scenario controls update reference, detail, comparisons and ranking',()=>{
-  set('scenario-area','120','change');assert.equal($('hero-ratio').textContent,'7.69');assert.equal($('detail-ratio').textContent,'20.29');
-  assert.ok($('comparison-list').textContent.includes('20.29'));assert.ok($('region-table-body').textContent.includes('20.29'));
-  $('reset-scenario').click();assert.equal($('hero-ratio').textContent,'5.77');
+  set('scenario-area','120','change');assert.equal($('hero-ratio').textContent,'23.07');assert.equal($('detail-ratio').textContent,'60.87');
+  assert.ok($('comparison-list').textContent.includes('60.87'));assert.ok($('region-table-body').textContent.includes('60.87'));
+  $('reset-scenario').click();assert.equal($('hero-ratio').textContent,'17.30');
 });
 check('clicking a geographic region updates details and share parameters',()=>{
   d.querySelector('#china-map [data-code="440000"]').dispatchEvent(new w.MouseEvent('click',{bubbles:true}));

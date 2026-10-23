@@ -9,9 +9,9 @@ test('official data has 31 unique, complete same-year regions', () => {
   assert.equal(new Set(data.records.map(r=>r.code)).size,31);
   for(const r of data.records){assert.equal(r.year,2024);assert.ok(r.price>0);assert.ok(r.urbanIncome>0);assert.match(r.priceSource,/^https:\/\/www\.stats\.gov\.cn\//);assert.ok(Math.abs(r.crossCheckDifference)<1);}
 });
-test('national benchmark uses household population, not earners',()=>assert.ok(Math.abs(M.provinceRatio(data.national,90,3)-5.7683)<0.0001));
+test('national benchmark uses household population, not earners',()=>assert.ok(Math.abs(M.provinceRatio(data.national,90,1)-17.3049)<0.0001));
 test('Shanghai and Beijing are faithfully reproduced',()=>{
-  for(const r of data.records) assert.ok(Math.abs(M.provinceRatio(r,90,3)-r.defaultRatio90sqm3persons)<0.0001);
+  for(const r of data.records) assert.ok(Math.abs(M.provinceRatio(r,90,1)-r.defaultRatio90sqm1person)<0.0001);
 });
 test('area and household population scale the ratio correctly',()=>{
   const r=data.records[0];assert.equal(M.provinceRatio(r,180,3),M.provinceRatio(r,90,3)*2);assert.equal(M.provinceRatio(r,90,6),M.provinceRatio(r,90,3)/2);
