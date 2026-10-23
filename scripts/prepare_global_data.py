@@ -3,7 +3,11 @@ import json
 from pathlib import Path
 
 DATA = Path(__file__).resolve().parents[1] / 'docs' / 'data' / 'global'
-data = json.loads((DATA / 'global-housing-2026.json').read_text())
-(DATA / 'global-housing-data.js').write_text(
-    'window.GLOBAL_HOUSING=' + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + ';\n')
-print(f'Packaged {len(data["records"])} approximate city references.')
+for source, target, variable in [
+    ('global-housing-2026.json', 'global-housing-data.js', 'GLOBAL_HOUSING'),
+    ('sea-housing-2026.json', 'sea-housing-data.js', 'SEA_HOUSING'),
+]:
+    data = json.loads((DATA / source).read_text())
+    (DATA / target).write_text(
+        'window.' + variable + '=' + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + ';\n')
+    print(f'Packaged {len(data["records"])} city references for {variable}.')
