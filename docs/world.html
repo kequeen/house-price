@@ -6,7 +6,7 @@
   <title>安居尺度 · 全球城市住房负担</title>
   <meta name="description" content="把安居的尺度放到世界地图上。探索国际城市的单人职业收入购房参照，按来源区分口径，并用本地币种和自己的可支配收入测算。">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="world.css">
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="world.css?v=20261026">
   <script defer src="data/global/world-map-data.js"></script><script defer src="data/global/global-housing-data.js"></script><script defer src="data/global/sea-housing-data.js"></script>
   <script defer src="core.js"></script><script defer src="world.js?v=sea-20261024"></script>
 </head>
@@ -18,7 +18,7 @@
   <a class="github-link" href="https://github.com/kequeen/house-price" target="_blank" rel="noopener noreferrer">项目源码 ↗</a>
 </div></header>
 <main id="top">
-  <div class="shell"><div class="scope-switch" aria-label="观察范围"><a href="world.html" data-scope="global" aria-current="page">◎ 全球城市</a><a href="world.html?scope=sea" data-scope="sea">东南亚</a><a href="index.html">中国省区 →</a></div></div>
+  <div class="shell"><div class="scope-switch" aria-label="观察范围"><a href="world.html" data-scope="global" aria-current="page">◎ 全球城市</a><a href="world.html?scope=sea" data-scope="sea">东南亚</a><a href="index.html">中国省区 →</a><a href="cities.html">中国城市</a></div></div>
   <section class="hero shell world-hero" aria-labelledby="world-title">
     <div class="hero-copy"><div class="eyebrow"><span class="status-dot"></span> GLOBAL HOME OBSERVATORY</div><h1 id="world-title">把生活的可能，<br>放到<span>世界地图。</span></h1><p>从东京到伦敦，从纽约到悉尼。<br>看看不同城市的住房负担，再用自己的收入，算一份属于你的答案。</p><div class="hero-actions"><a href="#world-explore" class="button primary">探索全球 <span>↗</span></a><a href="#world-calculator" class="button plain">算算我的情况 <span>→</span></a></div></div>
     <div class="world-hero-card"><span class="eyebrow">ONE PERSON, MANY POSSIBILITIES</span><div class="world-orbit" aria-hidden="true"><span>✦</span><svg viewBox="0 0 220 170"><ellipse cx="110" cy="85" rx="81" ry="65"/><ellipse cx="110" cy="85" rx="37" ry="65"/><path d="M29 85h162M39 55h142M39 115h142M110 20v130"/></svg><i>東京</i><i>London</i><i>New York</i></div><strong><span id="hero-city-count">—</span> 座城市，一份清楚的参照。</strong><p>默认单人购房 · 保留来源和数据边界</p></div>
@@ -41,7 +41,7 @@
 
   <section id="global-methods" class="section shell global-methods"><div class="eyebrow">03 / KNOW THE DIFFERENCE</div><h2>全球视野，也要把口径讲清楚。</h2><div class="method-cards"><article><span>01</span><h3>城市样本，不是国家均值</h3><p>使用瑞银2026报告的国际城市样本，覆盖亚洲、欧洲、美洲和大洋洲。没有纳入的城市和非洲市场不作估值，不以邻近城市代填。</p></article><article><span>02</span><h3>职业收入，单独看待</h3><p>原指标为近市中心60㎡公寓价格与熟练服务业从业者年收入的比值。报告未明确说明收入是否税后，不能视为中国页的居民可支配收入。</p></article><article><span>03</span><h3>约数与情景，明确区分</h3><p>图表无逐项数值标签，本页数值为近似读值。调整面积按单价不变线性缩放，2份收入按两份等额收入相加；均非原报告对不同户型和家庭的实测。</p></article></div><div class="global-source-panel"><div><h3>来源与计算</h3><p id="global-source-description">UBS Global Real Estate Bubble Index 2026 · Price-to-income 图表与 Methodology & data。</p><div class="formula-block">当前情景倍数 ≈ 原报告60㎡单人倍数 × 面积 ÷ 60 ÷ 收入份数</div><p>报告发布年不表示所有原始观测均为同一个月。2026报告进行了方法和数据修订，不直接与旧版报告作年度涨跌比较。报告中的“泡沫风险分数”不是本页的房价收入倍数。</p></div><div class="global-source-actions"><a id="global-pdf" class="button secondary" target="_blank" rel="noopener noreferrer">打开瑞银原报告 ↗</a><a id="global-data-download" href="data/global/global-housing-2026.json" download class="text-button">下载约值、口径及来源 JSON ↓</a><a href="https://www.naturalearthdata.com/about/terms-of-use/" target="_blank" rel="noopener noreferrer" class="text-button">Natural Earth 底图来源 ↗</a><a href="index.html" class="text-button">查看中国31省区市官方可支配收入数据 →</a></div></div><p class="global-disclaimer">本页帮助理解收入对应的住房负担，不评价移居条件、宜居程度、房产投资回报或购房资格。房价收入比不等于实际储蓄或还贷年限。</p></section>
 </main>
-<footer class="footer shell"><div><a class="footer-brand" href="#top">安居尺度<span>世界很大，让每一份选择有据可依。</span></a><small>全球报告：2026 · 中国统计年度：2024 · 来源均可追溯</small></div><div class="footer-links"><a href="index.html">中国省区 →</a><a href="https://github.com/kequeen/house-price" target="_blank" rel="noopener noreferrer">项目源码 ↗</a></div></footer>
+<footer class="footer shell"><div><a class="footer-brand" href="#top">安居尺度<span>世界很大，让每一份选择有据可依。</span></a><small>全球报告：2026 · 中国统计年度：2024 · 来源均可追溯</small></div><div class="footer-links"><a href="index.html">中国省区 →</a><a href="cities.html">中国城市</a><a href="https://github.com/kequeen/house-price" target="_blank" rel="noopener noreferrer">项目源码 ↗</a></div></footer>
 <div id="world-toast" class="toast" role="status" hidden></div>
 <noscript><p class="shell">此交互地图需要启用JavaScript，也可以<a href="data/global/global-housing-2026.json">下载数据及来源</a>。</p></noscript>
 </body></html>
