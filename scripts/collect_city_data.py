@@ -52,11 +52,42 @@ def normalized_record(record, source):
 
 def parse_source(source, body):
     parser = source['parser']
-    if parser == 'reviewed-snapshot':
+    if parser in ['reviewed-snapshot', 'reviewed-evidence']:
         if hashlib.sha256(body).hexdigest() != source['reviewedSha256']:
             raise ValueError('官方原文已变化，需要重新核对已审阅字段；保留上一版，不自动套用旧数值')
         return source.get('reviewedRecords', []), source.get('reviewedIncomes', [])
     html = body.decode('utf-8-sig')
+    if parser == 'wuhan-monthly':
+        text = compact(BeautifulSoup(html, 'lxml').get_text())
+        match = re.search(r'(\d{4})年(\d{1,2})月新建商品房成交统计情况', text)
+        if not match or f'{match[1]}-{int(match[2]):02d}' != source['period'] or '商品住房' not in text:
+            raise ValueError('武汉月份或住宅表头与请求不匹配')
+        result = []
+        for cells in rows(html):
+            if len(cells) != 11:
+                continue
+            try:
+                count = float(cells[1].replace(',', ''))
+                area = float(cells[2].replace(',', ''))
+            except ValueError:
+                continue
+            if not count.is_integer():
+                raise ValueError('住宅套数不是整数')
+            district = None if cells[0] == '合计' else cells[0]
+            result.append({'id': 'wuhan-' + source['period'].replace('-', '') + '-' + str(len(result)),
+                           'city': '武汉', 'cityCode': '420100', 'district': district,
+                           'period': source['period'], 'frequency': 'monthly', 'houseType': 'new-residential',
+                           'scope': district or '全市（原表统计范围）', 'count': int(count), 'areaSqm': area,
+                           'method': 'parsed-official-residential-table',
+                           'qualityNote': '仅取商品住房列。原表统计范围包括网上签约和部分合同备案注销后的综合统计数据；分区含开发区等统计分组。未公开金额，不计算均价。'})
+        totals = [r for r in result if not r['district']]
+        districts = [r for r in result if r['district']]
+        if len(totals) != 1 or not districts:
+            raise ValueError('缺少唯一合计或分区住宅行')
+        for key, tolerance in [('count', 0), ('areaSqm', .15)]:
+            if abs(sum(r[key] for r in districts) - totals[0][key]) > tolerance:
+                raise ValueError('武汉分区住宅与合计不一致')
+        return result, []
     if parser in ['beijing', 'shijiazhuang']:
         parsed = parse_beijing(html) if parser == 'beijing' else parse_shijiazhuang(html, source['period'])
         result = []
@@ -137,7 +168,11 @@ def collect(config, offline=False, refresh=False, interval=1.0):
             metadata = cache / (key + '.json')
             meta = json.loads(metadata.read_text()) if metadata.exists() else None
             recent = meta and (datetime.now(timezone.utc).timestamp() - meta['timestamp']) < 86400
-            if meta and (offline or (recent and not refresh)):
+            if spec['parser'] == 'reviewed-evidence':
+                body = (ROOT / spec['evidenceFile']).read_bytes()
+                meta = {'file': spec['evidenceFile']}
+                fetched_at = spec['reviewedAt']
+            elif meta and (offline or (recent and not refresh)):
                 body = (raw / meta['file']).read_bytes()
                 if hashlib.sha256(body).hexdigest() != meta['sha256']:
                     raise ValueError('缓存原文哈希不一致')
@@ -166,8 +201,13 @@ def collect(config, offline=False, refresh=False, interval=1.0):
             records, income = parse_source(spec, body)
             all_records.extend(normalized_record(r, spec) for r in records)
             incomes.extend(income)
-            source.update({'status': 'collected', 'rawSha256': hashlib.sha256(body).hexdigest(),
-                           'fetchedAt': fetched_at, 'rawSnapshot': meta['file']})
+            if spec['parser'] == 'reviewed-evidence':
+                source.update({'status': 'reviewed-evidence', 'rawSha256': None,
+                               'evidenceSha256': hashlib.sha256(body).hexdigest(), 'fetchedAt': fetched_at,
+                               'evidenceNote': '官方公开网页核读摘录；原HTTP页面读取受限，摘录哈希不是原文HTML哈希。'})
+            else:
+                source.update({'status': 'collected', 'rawSha256': hashlib.sha256(body).hexdigest(),
+                               'fetchedAt': fetched_at, 'rawSnapshot': meta['file']})
             print(f"{spec['id']}: {len(records)} records, {len(income)} income values", flush=True)
         except Exception as error:
             previous = old_sources.get(spec['id'], {})
@@ -193,7 +233,7 @@ def collect(config, offline=False, refresh=False, interval=1.0):
             'retrievedAt': config['asOf'], 'scope': '首批城市和公开分区，不代表全国所有城市已接入',
             'cities': config['cities'], 'sources': sources, 'records': all_records, 'incomes': incomes,
             'annualAffordability': baselines, 'unavailableSources': config.get('unavailableSources', []),
-            'methodology': config['methodology']}
+            'methodology': config['methodology'], 'recentCoverage': config.get('recentCoverage', {})}
     output.parent.mkdir(parents=True, exist_ok=True)
     temp = output.with_suffix('.tmp')
     temp.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')

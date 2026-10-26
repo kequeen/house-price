@@ -1,0 +1,12 @@
+{
+  "sourceUrl": "https://tjj.sh.gov.cn/tjgb/20260330/e0772941e8e041eaaad2df850b44ef98.html",
+  "title": "2025年上海市国民经济和社会发展统计公报",
+  "publishedAt": "2026-03-30",
+  "reviewedAt": "2026-10-27",
+  "captureKind": "manually-reviewed-official-web-numeric-excerpt",
+  "note": "官方公开网页阅读工具核读数值。普通HTTP读取返回403；本文件为数值摘录，不是原文HTML快照。",
+  "period": "2025",
+  "residentialSalesAreaSqm": 12249300,
+  "residentialSalesAmountCny": 566749000000,
+  "urbanDisposableIncomeCnyPerYear": 96842
+}
