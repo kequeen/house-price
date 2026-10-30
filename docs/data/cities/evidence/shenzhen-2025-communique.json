@@ -1,0 +1,19 @@
+{
+  "sourceUrl": "https://www.sz.gov.cn/cn/xxgk/zfxxgj/tjsj/tjgb/content/post_12805133.html",
+  "title": "深圳市2025年国民经济和社会发展统计公报",
+  "reviewedAt": "2026-10-31",
+  "captureKind": "manually-reviewed-official-web-numeric-excerpt",
+  "note": "官方公开网页核读数值摘录；本文件不是原始HTML快照。",
+  "record": {
+    "id": "shenzhen-2025-residential",
+    "city": "深圳",
+    "cityCode": "440300",
+    "period": "2025",
+    "frequency": "annual",
+    "houseType": "new-residential",
+    "scope": "全市商品住宅销售",
+    "areaSqm": 5435100,
+    "qualityNote": "原文住宅销售面积543.51万平方米，未核验同口径住宅销售金额。"
+  },
+  "income": null
+}

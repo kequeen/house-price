@@ -1,0 +1,19 @@
+{
+  "sourceUrl": "https://zjj.sz.gov.cn/xxgk/gzdt/content/post_12967052.html",
+  "title": "8月深圳楼市持续稳固向好",
+  "reviewedAt": "2026-10-31",
+  "captureKind": "manually-reviewed-official-web-numeric-excerpt",
+  "note": "官方公开网页核读数值摘录；本文件不是原始HTML快照。",
+  "record": {
+    "id": "shenzhen-202608-new",
+    "city": "深圳",
+    "cityCode": "440300",
+    "period": "2026-08",
+    "frequency": "monthly",
+    "houseType": "new-residential",
+    "scope": "全市新建商品住宅网签",
+    "count": 2589,
+    "qualityNote": "2026年8月新建商品住宅网签销售2589套；住建局网站转载媒体报道，未提供同口径金额和面积。"
+  },
+  "income": null
+}

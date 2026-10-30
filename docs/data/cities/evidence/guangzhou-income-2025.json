@@ -1,0 +1,15 @@
+{
+  "sourceUrl": "https://tjj.gz.gov.cn/stats_newtjyw/sjjd/content/post_10669102.html",
+  "title": "2025年广州经济运行情况",
+  "reviewedAt": "2026-10-31",
+  "captureKind": "manually-reviewed-official-web-numeric-excerpt",
+  "note": "官方公开网页核读数值摘录；本文件不是原始HTML快照。",
+  "record": null,
+  "income": {
+    "city": "广州",
+    "year": 2025,
+    "urbanDisposableIncomeCnyPerYear": 86069,
+    "scope": "全市城镇居民",
+    "incomeDefinition": "城镇居民人均可支配收入，不是就业工资"
+  }
+}

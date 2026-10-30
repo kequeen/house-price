@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "title": "中国城市官方住宅交易与同年收入观察",
-  "retrievedAt": "2026-10-27",
+  "retrievedAt": "2026-10-31",
   "scope": "首批城市和公开分区，不代表全国所有城市已接入",
   "cities": [
     {
@@ -44,7 +44,7 @@
       "name": "广州",
       "provinceCode": "440000",
       "coverageStatus": "collected",
-      "coverageNote": "新增2025白皮书二手住宅套均网签金额及2026年7月住宅面积同比；套均金额不是元/㎡，不推算均价。"
+      "coverageNote": "2025年城镇人均收入已接入；2026年7月住宅面积同比、二手套均网签金额单列。住宅销售金额和面积待配齐。"
     },
     {
       "id": "442000",
@@ -64,8 +64,8 @@
       "id": "440300",
       "name": "深圳",
       "provinceCode": "440000",
-      "coverageStatus": "blocked",
-      "coverageNote": "市房地产信息平台月度页面返回前端防护脚本，保留响应不绕过。"
+      "coverageStatus": "collected",
+      "coverageNote": "2025年住宅销售面积、2026年8月住宅网签套数已接入；住宅销售金额和同年城镇收入仍待核验。原月度平台访问受限。"
     },
     {
       "id": "330100",
@@ -1212,7 +1212,7 @@
       "rawSha256": null,
       "evidenceSha256": "40fb226adf190e7bfd3ec9519b6d93c8c11eb8a53139ab8e94915bfec8032822",
       "fetchedAt": "2026-10-27",
-      "evidenceNote": "官方公开网页核读摘录；原HTTP页面读取受限，摘录哈希不是原文HTML哈希。"
+      "evidenceNote": "官方公开网页核读摘录；摘录哈希不是原文HTML哈希。"
     },
     {
       "id": "shanghai-202609-sales",
@@ -1228,7 +1228,52 @@
       "rawSha256": null,
       "evidenceSha256": "eac242d06ef5c5bb683fbeaf84d4631591f3f9b20a7f92dd0be410ae52afc81d",
       "fetchedAt": "2026-10-27",
-      "evidenceNote": "官方公开网页核读摘录；原HTTP页面读取受限，摘录哈希不是原文HTML哈希。"
+      "evidenceNote": "官方公开网页核读摘录；摘录哈希不是原文HTML哈希。"
+    },
+    {
+      "id": "shenzhen-2025-communique",
+      "url": "https://www.sz.gov.cn/cn/xxgk/zfxxgj/tjsj/tjgb/content/post_12805133.html",
+      "title": "深圳市2025年国民经济和社会发展统计公报",
+      "provider": "深圳市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "evidenceFile": "docs/data/cities/evidence/shenzhen-2025-communique.json",
+      "reviewedAt": "2026-10-31",
+      "status": "reviewed-evidence",
+      "rawSha256": null,
+      "evidenceSha256": "7afee8c6c82a8c13656d39ff55501c60380a32e60bfd0065804cf6b132553153",
+      "fetchedAt": "2026-10-31",
+      "evidenceNote": "官方公开网页核读摘录；摘录哈希不是原文HTML哈希。"
+    },
+    {
+      "id": "shenzhen-202608-housing",
+      "url": "https://zjj.sz.gov.cn/xxgk/gzdt/content/post_12967052.html",
+      "title": "8月深圳楼市持续稳固向好",
+      "provider": "深圳市住房和建设局网站转载深圳特区报",
+      "kind": "housing-department",
+      "parser": "reviewed-evidence",
+      "evidenceFile": "docs/data/cities/evidence/shenzhen-202608-housing.json",
+      "reviewedAt": "2026-10-31",
+      "status": "reviewed-evidence",
+      "rawSha256": null,
+      "evidenceSha256": "343033b6ee772572a358d1db6e38d4d73c162f235e85d1e0b89d30810e277c05",
+      "fetchedAt": "2026-10-31",
+      "evidenceNote": "官方公开网页核读摘录；摘录哈希不是原文HTML哈希。"
+    },
+    {
+      "id": "guangzhou-income-2025",
+      "url": "https://tjj.gz.gov.cn/stats_newtjyw/sjjd/content/post_10669102.html",
+      "title": "2025年广州经济运行情况",
+      "provider": "广州市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "evidenceFile": "docs/data/cities/evidence/guangzhou-income-2025.json",
+      "reviewedAt": "2026-10-31",
+      "status": "reviewed-evidence",
+      "rawSha256": null,
+      "evidenceSha256": "aec968104067363590cc77bd3e3c511021cb3040afd93177230a46d3d14adbaf",
+      "fetchedAt": "2026-10-31",
+      "evidenceNote": "官方公开网页核读摘录；摘录哈希不是原文HTML哈希。"
     }
   ],
   "records": [
@@ -22721,6 +22766,52 @@
         "amountCny": "元",
         "priceCnyPerSqm": "元/平方米"
       }
+    },
+    {
+      "id": "shenzhen-2025-residential",
+      "city": "深圳",
+      "cityCode": "440300",
+      "period": "2025",
+      "frequency": "annual",
+      "houseType": "new-residential",
+      "scope": "全市商品住宅销售",
+      "areaSqm": 5435100,
+      "qualityNote": "原文住宅销售面积543.51万平方米，未核验同口径住宅销售金额。",
+      "sourceId": "shenzhen-2025-communique",
+      "sourceUrl": "https://www.sz.gov.cn/cn/xxgk/zfxxgj/tjsj/tjgb/content/post_12805133.html",
+      "district": null,
+      "count": null,
+      "amountCny": null,
+      "priceCnyPerSqm": null,
+      "units": {
+        "count": "套",
+        "areaSqm": "平方米",
+        "amountCny": "元",
+        "priceCnyPerSqm": "元/平方米"
+      }
+    },
+    {
+      "id": "shenzhen-202608-new",
+      "city": "深圳",
+      "cityCode": "440300",
+      "period": "2026-08",
+      "frequency": "monthly",
+      "houseType": "new-residential",
+      "scope": "全市新建商品住宅网签",
+      "count": 2589,
+      "qualityNote": "2026年8月新建商品住宅网签销售2589套；住建局网站转载媒体报道，未提供同口径金额和面积。",
+      "sourceId": "shenzhen-202608-housing",
+      "sourceUrl": "https://zjj.sz.gov.cn/xxgk/gzdt/content/post_12967052.html",
+      "district": null,
+      "areaSqm": null,
+      "amountCny": null,
+      "priceCnyPerSqm": null,
+      "units": {
+        "count": "套",
+        "areaSqm": "平方米",
+        "amountCny": "元",
+        "priceCnyPerSqm": "元/平方米"
+      }
     }
   ],
   "incomes": [
@@ -22786,6 +22877,15 @@
       "sourceId": "shanghai-2025-communique",
       "sourceUrl": "https://tjj.sh.gov.cn/tjgb/20260330/e0772941e8e041eaaad2df850b44ef98.html",
       "incomeDefinition": "城镇常住居民人均可支配收入，不是就业人员工资"
+    },
+    {
+      "city": "广州",
+      "year": 2025,
+      "urbanDisposableIncomeCnyPerYear": 86069,
+      "scope": "全市城镇居民",
+      "incomeDefinition": "城镇居民人均可支配收入，不是就业工资",
+      "sourceId": "guangzhou-income-2025",
+      "sourceUrl": "https://tjj.gz.gov.cn/stats_newtjyw/sjjd/content/post_10669102.html"
     }
   ],
   "annualAffordability": [
