@@ -1,0 +1,89 @@
+{
+  "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
+  "title": "广州统计信息手册2025：主要年份城镇居民收入（第33页）",
+  "captureKind": "manually-reviewed-official-web-numeric-excerpt",
+  "reviewedAt": "2026-10-31",
+  "incomes": [
+    {
+      "city": "广州",
+      "year": 2016,
+      "urbanDisposableIncomeCnyPerYear": 50940.7,
+      "sourceId": "guangzhou-urban-income-history-2016-2024",
+      "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
+      "scope": "全市城镇居民",
+      "incomeDefinition": "城镇居民人均全年可支配收入；广州统计信息手册2025第33页"
+    },
+    {
+      "city": "广州",
+      "year": 2017,
+      "urbanDisposableIncomeCnyPerYear": 55400.49,
+      "sourceId": "guangzhou-urban-income-history-2016-2024",
+      "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
+      "scope": "全市城镇居民",
+      "incomeDefinition": "城镇居民人均全年可支配收入；广州统计信息手册2025第33页"
+    },
+    {
+      "city": "广州",
+      "year": 2018,
+      "urbanDisposableIncomeCnyPerYear": 59982.1,
+      "sourceId": "guangzhou-urban-income-history-2016-2024",
+      "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
+      "scope": "全市城镇居民",
+      "incomeDefinition": "城镇居民人均全年可支配收入；广州统计信息手册2025第33页"
+    },
+    {
+      "city": "广州",
+      "year": 2019,
+      "urbanDisposableIncomeCnyPerYear": 65052.1,
+      "sourceId": "guangzhou-urban-income-history-2016-2024",
+      "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
+      "scope": "全市城镇居民",
+      "incomeDefinition": "城镇居民人均全年可支配收入；广州统计信息手册2025第33页"
+    },
+    {
+      "city": "广州",
+      "year": 2020,
+      "urbanDisposableIncomeCnyPerYear": 68304.1,
+      "sourceId": "guangzhou-urban-income-history-2016-2024",
+      "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
+      "scope": "全市城镇居民",
+      "incomeDefinition": "城镇居民人均全年可支配收入；广州统计信息手册2025第33页"
+    },
+    {
+      "city": "广州",
+      "year": 2021,
+      "urbanDisposableIncomeCnyPerYear": 74416.17,
+      "sourceId": "guangzhou-urban-income-history-2016-2024",
+      "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
+      "scope": "全市城镇居民",
+      "incomeDefinition": "城镇居民人均全年可支配收入；广州统计信息手册2025第33页"
+    },
+    {
+      "city": "广州",
+      "year": 2022,
+      "urbanDisposableIncomeCnyPerYear": 76849.41,
+      "sourceId": "guangzhou-urban-income-history-2016-2024",
+      "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
+      "scope": "全市城镇居民",
+      "incomeDefinition": "城镇居民人均全年可支配收入；广州统计信息手册2025第33页"
+    },
+    {
+      "city": "广州",
+      "year": 2023,
+      "urbanDisposableIncomeCnyPerYear": 80500.86,
+      "sourceId": "guangzhou-urban-income-history-2016-2024",
+      "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
+      "scope": "全市城镇居民",
+      "incomeDefinition": "城镇居民人均全年可支配收入；广州统计信息手册2025第33页"
+    },
+    {
+      "city": "广州",
+      "year": 2024,
+      "urbanDisposableIncomeCnyPerYear": 83435.78,
+      "sourceId": "guangzhou-urban-income-history-2016-2024",
+      "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
+      "scope": "全市城镇居民",
+      "incomeDefinition": "城镇居民人均全年可支配收入；广州统计信息手册2025第33页"
+    }
+  ]
+}

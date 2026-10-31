@@ -1,0 +1,21 @@
+{
+  "sourceUrl": "https://www.sz.gov.cn/attachment/1/1325/1325426/10740488.pdf",
+  "title": "深圳2022年官方年度住宅及居民收入资料",
+  "reviewedAt": "2026-10-31",
+  "captureKind": "manually-reviewed-official-web-numeric-excerpt",
+  "records": [
+    {
+      "id": "shenzhen-sales-2022",
+      "city": "深圳",
+      "cityCode": "440300",
+      "period": "2022",
+      "frequency": "annual",
+      "houseType": "new-residential",
+      "scope": "全市房地产开发企业住宅销售",
+      "areaSqm": 5050200,
+      "amountCny": null,
+      "qualityNote": "官方年度住宅销售指标；保持原发布值及舍入精度，不以开发投资额代替销售金额。"
+    }
+  ],
+  "incomes": []
+}

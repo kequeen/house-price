@@ -6,12 +6,13 @@
   const q = new URLSearchParams(location.search), cities = new Map(D.cities.map(c => [c.id, c]));
   const sources = new Map(D.sources.map(s => [s.id, s]));
   const areas = [60, 90, 100, 120, 140, 180];
+  const availableYears = [...new Set(D.records.map(r => r.period.slice(0, 4)))].sort().reverse();
   const state = {city: cities.has(q.get('city')) ? q.get('city') : '420100', record: q.get('record'),
     market: ['all', 'new-residential', 'second-hand-residential', 'new-and-resale-residential', 'auxiliary'].includes(q.get('market')) ? q.get('market') : 'all',
     area: areas.includes(Number(q.get('area'))) ? Number(q.get('area')) : 90,
     people: Number.isInteger(Number(q.get('people'))) && Number(q.get('people')) >= 1 && Number(q.get('people')) <= 6 ? Number(q.get('people')) : 1,
     search: '', filter: 'all', incomeYear: q.get('incomeYear'),
-    years: ['recent', '2026', '2025', 'all'].includes(q.get('years')) ? q.get('years') : (D.records.some(r => r.id === q.get('record') && r.period.slice(0, 4) < '2025') ? 'all' : 'recent')};
+    years: ['recent', 'history', 'all', ...availableYears].includes(q.get('years')) ? q.get('years') : (D.records.some(r => r.id === q.get('record') && r.period.slice(0, 4) < '2025') ? 'all' : 'recent')};
   const fmt = (n, digits = 0) => n == null ? '—' : new Intl.NumberFormat('zh-CN', {minimumFractionDigits: digits, maximumFractionDigits: digits}).format(n);
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
   const residential = r => ['new-residential', 'second-hand-residential', 'new-and-resale-residential'].includes(r.houseType);
@@ -46,7 +47,7 @@
   }
   function selectedRows() {
     return ordered(summaries(cities.get(state.city)).filter(r =>
-      (state.years === 'all' || (state.years === 'recent' ? ['2025', '2026'].includes(r.period.slice(0, 4)) : r.period.startsWith(state.years))) &&
+      (state.years === 'all' || (state.years === 'recent' ? ['2025', '2026'].includes(r.period.slice(0, 4)) : state.years === 'history' ? r.period.slice(0, 4) >= '2016' && r.period.slice(0, 4) <= '2025' : r.period.startsWith(state.years))) &&
       (state.market === 'all' || (state.market === 'auxiliary' ? !residential(r) : r.houseType === state.market))));
   }
   function activeRecord() { return selectedRows().find(r => r.id === state.record); }
@@ -160,6 +161,18 @@
     const rows = [['城市', '区县或分组', '子分项不重复累加', '期间', '频率', '住宅类型', '统计范围', '套数', '面积平方米', '金额元', '均价元每平方米', '说明', '来源', '原文SHA256', '核读摘录SHA256', '套均网签金额元每套', '住宅面积同比百分比', '非住宅专属报道参考元每平方米'], ...all.map(item => [item.city, item.district || '原文汇总', item.isComponent ? '是' : '否', item.period, item.frequency, typeName(item.houseType), item.scope, item.count, item.areaSqm, item.amountCny, item.priceCnyPerSqm, item.qualityNote, item.sourceUrl, sources.get(item.sourceId)?.rawSha256, sources.get(item.sourceId)?.evidenceSha256, item.averageUnitPriceCny, item.areaYoyPercent, item.publishedReferencePriceCnyPerSqm])];
     const url = URL.createObjectURL(new Blob([M.csv(rows)], {type:'text/csv;charset=utf-8;'})), a = document.createElement('a'); a.href = url; a.download = `${r.city}-${r.period}-官方交易数据.csv`; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
+  $('city-years').innerHTML = '<option value="recent">近两年 · 2025—2026</option><option value="history">过去十年 · 2016—2025</option>' + availableYears.map(y => `<option value="${y}">${y}年</option>`).join('') + '<option value="all">全部年份（含历史）</option>';
+  $('history-coverage-table').innerHTML = ['北京', '上海', '广州', '深圳'].map(name => {
+    const c = D.cities.find(c => c.name === name);
+    return Array.from({length: 10}, (_, i) => String(2025 - i)).map(year => {
+      const annual = summaries(c).filter(r => r.period === year && r.frequency === 'annual' && r.houseType === 'new-residential');
+      const income = D.incomes.some(r => r.city === name && String(r.year) === year);
+      const complete = D.annualAffordability.some(r => r.city === name && String(r.year) === year);
+      const net = annual.some(r => r.excludeFromAnnualAffordability);
+      const present = key => annual.some(r => r[key] != null) ? '已接入' : '待补';
+      return `<tr><td>${name}</td><td><a class="text-button" href="cities.html?city=${c.id}&years=${year}&incomeYear=${year}#city-explore">${year}年 ↗</a></td><td>${present('areaSqm')}</td><td>${present('amountCny')}</td><td>${income ? '已接入' : '待补'}</td><td>${complete ? '可计算' : '未配齐'}</td><td>${net ? '网签现售+预售，独立口径' : annual.length ? '开发企业统计销售；沿用来源发布值' : '暂无已核验年度住宅记录'}</td></tr>`;
+    }).join('');
+  }).join('');
   $('stat-cities').textContent = D.cities.filter(hasResidential).length;
   $('stat-ratios').textContent = new Set(D.annualAffordability.map(r => r.city)).size;
   $('stat-districts').textContent = new Set(D.records.filter(r => r.district).map(r => r.city + ':' + r.district)).size;

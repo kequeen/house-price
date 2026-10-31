@@ -1,0 +1,31 @@
+{
+  "sourceUrl": "https://tjj.sh.gov.cn/tjgb/20170302/0014-293816.html",
+  "title": "上海2016年官方年度住宅及居民收入资料",
+  "reviewedAt": "2026-10-31",
+  "captureKind": "manually-reviewed-official-web-numeric-excerpt",
+  "records": [
+    {
+      "id": "shanghai-complete-2016",
+      "city": "上海",
+      "cityCode": "310000",
+      "period": "2016",
+      "frequency": "annual",
+      "houseType": "new-residential",
+      "scope": "全市房地产开发企业住宅销售",
+      "areaSqm": 20198000,
+      "amountCny": 523329000000,
+      "qualityNote": "官方年度住宅销售指标；保持原发布值及舍入精度，不以开发投资额代替销售金额。"
+    }
+  ],
+  "incomes": [
+    {
+      "city": "上海",
+      "year": 2016,
+      "urbanDisposableIncomeCnyPerYear": 57692,
+      "sourceId": "shanghai-complete-2016",
+      "sourceUrl": "https://tjj.sh.gov.cn/tjgb/20170302/0014-293816.html",
+      "scope": "全市城镇常住居民",
+      "incomeDefinition": "城镇居民人均全年可支配收入"
+    }
+  ]
+}

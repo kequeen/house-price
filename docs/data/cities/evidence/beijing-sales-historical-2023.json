@@ -1,0 +1,21 @@
+{
+  "sourceUrl": "https://tjj.beijing.gov.cn/zxfbu/202401/t20240119_3539840.html",
+  "title": "北京2023年官方年度住宅及居民收入资料",
+  "reviewedAt": "2026-10-31",
+  "captureKind": "manually-reviewed-official-web-numeric-excerpt",
+  "records": [
+    {
+      "id": "beijing-sales-historical-2023",
+      "city": "北京",
+      "cityCode": "110000",
+      "period": "2023",
+      "frequency": "annual",
+      "houseType": "new-residential",
+      "scope": "全市房地产开发企业住宅销售",
+      "areaSqm": 8111000,
+      "amountCny": null,
+      "qualityNote": "官方年度住宅销售指标；保持原发布值及舍入精度，不以开发投资额代替销售金额。"
+    }
+  ],
+  "incomes": []
+}

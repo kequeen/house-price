@@ -7,14 +7,14 @@
       "name": "北京",
       "provinceCode": "110000",
       "coverageStatus": "collected",
-      "coverageNote": "2025全年住宅面积和城镇收入已接入，住宅金额待补齐；2024同年基准仍可查看。"
+      "coverageNote": "2016—2025年年度住宅销售面积已覆盖；补入多个历史城镇收入年份。销售金额仍主要缺失，2024年可算收入比。"
     },
     {
       "id": "310000",
       "name": "上海",
       "provinceCode": "310000",
       "coverageStatus": "collected",
-      "coverageNote": "2019—2025住宅销售金额、面积与城镇收入完整；2026年1—9月住宅面积单列。历史资料为官方网页核读摘录。"
+      "coverageNote": "2016—2025年连续十年的住宅销售金额、面积与城镇收入已配齐；2026年前三季度面积单列。"
     },
     {
       "id": "130100",
@@ -42,7 +42,7 @@
       "name": "广州",
       "provinceCode": "440000",
       "coverageStatus": "collected",
-      "coverageNote": "2020—2024年新建住宅现售和预售网签数据及2025年城镇收入已接入；网签与统计销售口径不同，暂不计算同年收入比。"
+      "coverageNote": "2016—2025年城镇收入已覆盖；2020—2024年新房网签金额面积单列，网签与开发企业统计销售口径保持独立。"
     },
     {
       "id": "442000",
@@ -63,7 +63,7 @@
       "name": "深圳",
       "provinceCode": "440000",
       "coverageStatus": "collected",
-      "coverageNote": "2025年住宅销售面积、2026年8月住宅网签套数已接入；住宅销售金额和同年城镇收入仍待核验。原月度平台访问受限。"
+      "coverageNote": "2022—2025年住宅销售面积及2026年8月新房套数已接入；住宅金额及同年城镇收入仍待核验。"
     },
     {
       "id": "330100",
@@ -4000,6 +4000,645 @@
           "qualityNote": "广州统计年鉴2023表1-32：住宅现售与预售网签数据相加。2022年现售187.64、预售684.58万㎡；金额分别4020262、25080748万元。与开发企业统计销售口径不同，不进入年度收入比。"
         }
       ]
+    },
+    {
+      "id": "beijing-sales-historical-2016",
+      "url": "https://tjj.beijing.gov.cn/zxfbu/202002/t20200216_1634962.html",
+      "title": "北京2016年官方年度住宅及居民收入资料",
+      "provider": "北京市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/beijing-sales-historical-2016.json",
+      "reviewedSha256": "ac9a9da48dc91e17de18eb06f535c56ce249dbfe3c4b59aea746124451c32dbb",
+      "reviewedRecords": [
+        {
+          "id": "beijing-sales-historical-2016",
+          "city": "北京",
+          "cityCode": "110000",
+          "period": "2016",
+          "frequency": "annual",
+          "houseType": "new-residential",
+          "scope": "全市房地产开发企业住宅销售",
+          "areaSqm": 9935000,
+          "amountCny": null,
+          "qualityNote": "官方年度住宅销售指标；保持原发布值及舍入精度，不以开发投资额代替销售金额。"
+        }
+      ],
+      "reviewedIncomes": []
+    },
+    {
+      "id": "beijing-sales-historical-2017",
+      "url": "https://tjj.beijing.gov.cn/zxfbu/202002/t20200216_1633993.html",
+      "title": "北京2017年官方年度住宅及居民收入资料",
+      "provider": "北京市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/beijing-sales-historical-2017.json",
+      "reviewedSha256": "e0bad30bf7b253b893a0488bafebf71241a4efc52dc4007e9d4515303654f80c",
+      "reviewedRecords": [
+        {
+          "id": "beijing-sales-historical-2017",
+          "city": "北京",
+          "cityCode": "110000",
+          "period": "2017",
+          "frequency": "annual",
+          "houseType": "new-residential",
+          "scope": "全市房地产开发企业住宅销售",
+          "areaSqm": 6128000,
+          "amountCny": null,
+          "qualityNote": "官方年度住宅销售指标；保持原发布值及舍入精度，不以开发投资额代替销售金额。"
+        }
+      ],
+      "reviewedIncomes": []
+    },
+    {
+      "id": "beijing-sales-historical-2018",
+      "url": "https://tjj.beijing.gov.cn/tjsj_31433/tjgb_31445/ndgb_31446/202002/t20200216_1643263.html",
+      "title": "北京2018年官方年度住宅及居民收入资料",
+      "provider": "北京市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/beijing-sales-historical-2018.json",
+      "reviewedSha256": "af24f2344b2321276a7b273d4733bd1b26355c19815db36199bda8ec143873a2",
+      "reviewedRecords": [
+        {
+          "id": "beijing-sales-historical-2018",
+          "city": "北京",
+          "cityCode": "110000",
+          "period": "2018",
+          "frequency": "annual",
+          "houseType": "new-residential",
+          "scope": "全市房地产开发企业住宅销售",
+          "areaSqm": 5268000,
+          "amountCny": null,
+          "qualityNote": "官方年度住宅销售指标；保持原发布值及舍入精度，不以开发投资额代替销售金额。"
+        }
+      ],
+      "reviewedIncomes": []
+    },
+    {
+      "id": "beijing-sales-historical-2019",
+      "url": "https://tjj.beijing.gov.cn/tjsj_31433/sjjd_31444/202002/t20200216_1639568.html",
+      "title": "北京2019年官方年度住宅及居民收入资料",
+      "provider": "北京市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/beijing-sales-historical-2019.json",
+      "reviewedSha256": "e99f6b46d21db083e16849f4169a021ed7f4225b97778eed6267fc83b4828de4",
+      "reviewedRecords": [
+        {
+          "id": "beijing-sales-historical-2019",
+          "city": "北京",
+          "cityCode": "110000",
+          "period": "2019",
+          "frequency": "annual",
+          "houseType": "new-residential",
+          "scope": "全市房地产开发企业住宅销售",
+          "areaSqm": 7890000,
+          "amountCny": null,
+          "qualityNote": "官方年度住宅销售指标；保持原发布值及舍入精度，不以开发投资额代替销售金额。"
+        }
+      ],
+      "reviewedIncomes": []
+    },
+    {
+      "id": "beijing-sales-historical-2020",
+      "url": "https://tjj.beijing.gov.cn/tjsj_31433/yjdsj_31440/fdc_31846/2020/202101/t20210120_2227305.html",
+      "title": "北京2020年官方年度住宅及居民收入资料",
+      "provider": "北京市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/beijing-sales-historical-2020.json",
+      "reviewedSha256": "fbffc273a3cfdc788fb673b64d938508abd0849f9785570151b1f357b4a81fd2",
+      "reviewedRecords": [
+        {
+          "id": "beijing-sales-historical-2020",
+          "city": "北京",
+          "cityCode": "110000",
+          "period": "2020",
+          "frequency": "annual",
+          "houseType": "new-residential",
+          "scope": "全市房地产开发企业住宅销售",
+          "areaSqm": 7336000,
+          "amountCny": null,
+          "qualityNote": "官方年度住宅销售指标；保持原发布值及舍入精度，不以开发投资额代替销售金额。"
+        }
+      ],
+      "reviewedIncomes": []
+    },
+    {
+      "id": "beijing-sales-historical-2021",
+      "url": "https://tjj.beijing.gov.cn/zxfbu/202201/t20220119_2594966.html",
+      "title": "北京2021年官方年度住宅及居民收入资料",
+      "provider": "北京市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/beijing-sales-historical-2021.json",
+      "reviewedSha256": "71f99d8f71219c42f05f28b27e91dc28b7536fa82665bc611c939e19e348c5f7",
+      "reviewedRecords": [
+        {
+          "id": "beijing-sales-historical-2021",
+          "city": "北京",
+          "cityCode": "110000",
+          "period": "2021",
+          "frequency": "annual",
+          "houseType": "new-residential",
+          "scope": "全市房地产开发企业住宅销售",
+          "areaSqm": 8771000,
+          "amountCny": null,
+          "qualityNote": "官方年度住宅销售指标；保持原发布值及舍入精度，不以开发投资额代替销售金额。"
+        }
+      ],
+      "reviewedIncomes": []
+    },
+    {
+      "id": "beijing-sales-historical-2022",
+      "url": "https://tjj.beijing.gov.cn/tjsj_31433/sjjd_31444/202301/t20230119_2904923.html",
+      "title": "北京2022年官方年度住宅及居民收入资料",
+      "provider": "北京市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/beijing-sales-historical-2022.json",
+      "reviewedSha256": "f7273a9b70d04fdac5765f17eee5af115f7a26f7dcd6449d7d613ed3dd7352fc",
+      "reviewedRecords": [
+        {
+          "id": "beijing-sales-historical-2022",
+          "city": "北京",
+          "cityCode": "110000",
+          "period": "2022",
+          "frequency": "annual",
+          "houseType": "new-residential",
+          "scope": "全市房地产开发企业住宅销售",
+          "areaSqm": 7419000,
+          "amountCny": null,
+          "qualityNote": "官方年度住宅销售指标；保持原发布值及舍入精度，不以开发投资额代替销售金额。"
+        }
+      ],
+      "reviewedIncomes": []
+    },
+    {
+      "id": "beijing-sales-historical-2023",
+      "url": "https://tjj.beijing.gov.cn/zxfbu/202401/t20240119_3539840.html",
+      "title": "北京2023年官方年度住宅及居民收入资料",
+      "provider": "北京市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/beijing-sales-historical-2023.json",
+      "reviewedSha256": "e66a539ce8b6b68c80c6400d9be9552d12a4258324b656d62baef0fa00e200ab",
+      "reviewedRecords": [
+        {
+          "id": "beijing-sales-historical-2023",
+          "city": "北京",
+          "cityCode": "110000",
+          "period": "2023",
+          "frequency": "annual",
+          "houseType": "new-residential",
+          "scope": "全市房地产开发企业住宅销售",
+          "areaSqm": 8111000,
+          "amountCny": null,
+          "qualityNote": "官方年度住宅销售指标；保持原发布值及舍入精度，不以开发投资额代替销售金额。"
+        }
+      ],
+      "reviewedIncomes": []
+    },
+    {
+      "id": "beijing-income-historical-2016",
+      "url": "https://tjj.beijing.gov.cn/tjsj_31433/sjjd_31444/202002/t20200216_1640258.html",
+      "title": "北京2016年官方年度住宅及居民收入资料",
+      "provider": "北京市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/beijing-income-historical-2016.json",
+      "reviewedSha256": "56da693d878b4df5cfb516827eb4503e37b8d287e6f27bc10f65482638b77342",
+      "reviewedRecords": [],
+      "reviewedIncomes": [
+        {
+          "city": "北京",
+          "year": 2016,
+          "urbanDisposableIncomeCnyPerYear": 57275,
+          "sourceId": "beijing-income-historical-2016",
+          "sourceUrl": "https://tjj.beijing.gov.cn/tjsj_31433/sjjd_31444/202002/t20200216_1640258.html",
+          "scope": "全市城镇常住居民",
+          "incomeDefinition": "城镇居民人均全年可支配收入"
+        }
+      ]
+    },
+    {
+      "id": "beijing-income-historical-2017",
+      "url": "https://tjj.beijing.gov.cn/zxfbu/202002/t20200216_1633939.html",
+      "title": "北京2017年官方年度住宅及居民收入资料",
+      "provider": "北京市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/beijing-income-historical-2017.json",
+      "reviewedSha256": "8b5834451418fb095d7789c88dc33f49b2aeb4be1346e0f0e9d7373f5830ee22",
+      "reviewedRecords": [],
+      "reviewedIncomes": [
+        {
+          "city": "北京",
+          "year": 2017,
+          "urbanDisposableIncomeCnyPerYear": 62406,
+          "sourceId": "beijing-income-historical-2017",
+          "sourceUrl": "https://tjj.beijing.gov.cn/zxfbu/202002/t20200216_1633939.html",
+          "scope": "全市城镇常住居民",
+          "incomeDefinition": "城镇居民人均全年可支配收入"
+        }
+      ]
+    },
+    {
+      "id": "beijing-income-historical-2018",
+      "url": "https://tjj.beijing.gov.cn/zt/xzgclqsn/rmsh/201909/t20190920_1378568.html",
+      "title": "北京2018年官方年度住宅及居民收入资料",
+      "provider": "北京市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/beijing-income-historical-2018.json",
+      "reviewedSha256": "d99e7dc1da8fa376da9263c6c17fe6f144f3dad0c4fe9b026a24bf37d7d6529a",
+      "reviewedRecords": [],
+      "reviewedIncomes": [
+        {
+          "city": "北京",
+          "year": 2018,
+          "urbanDisposableIncomeCnyPerYear": 67990,
+          "sourceId": "beijing-income-historical-2018",
+          "sourceUrl": "https://tjj.beijing.gov.cn/zt/xzgclqsn/rmsh/201909/t20190920_1378568.html",
+          "scope": "全市城镇常住居民",
+          "incomeDefinition": "城镇居民人均全年可支配收入"
+        }
+      ]
+    },
+    {
+      "id": "beijing-income-historical-2020",
+      "url": "https://tjj.beijing.gov.cn/tjsj_31433/yjdsj_31440/jmsz_32036/2020/202101/t20210120_2227744.html",
+      "title": "北京2020年官方年度住宅及居民收入资料",
+      "provider": "北京市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/beijing-income-historical-2020.json",
+      "reviewedSha256": "6a03acf4f3d0303cc8c367557d15bd04bc6cdabac07c82290df72e40d1f5976a",
+      "reviewedRecords": [],
+      "reviewedIncomes": [
+        {
+          "city": "北京",
+          "year": 2020,
+          "urbanDisposableIncomeCnyPerYear": 75602,
+          "sourceId": "beijing-income-historical-2020",
+          "sourceUrl": "https://tjj.beijing.gov.cn/tjsj_31433/yjdsj_31440/jmsz_32036/2020/202101/t20210120_2227744.html",
+          "scope": "全市城镇常住居民",
+          "incomeDefinition": "城镇居民人均全年可支配收入"
+        }
+      ]
+    },
+    {
+      "id": "beijing-income-historical-2021",
+      "url": "https://tjj.beijing.gov.cn/EnglishSite/SC/202204/P020220406395809040784.pdf",
+      "title": "北京2021年官方年度住宅及居民收入资料",
+      "provider": "北京市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/beijing-income-historical-2021.json",
+      "reviewedSha256": "26d515181daa254790daa19dc9fe1d2936dffa2a58090f9fafd627f4aade975d",
+      "reviewedRecords": [],
+      "reviewedIncomes": [
+        {
+          "city": "北京",
+          "year": 2021,
+          "urbanDisposableIncomeCnyPerYear": 81518,
+          "sourceId": "beijing-income-historical-2021",
+          "sourceUrl": "https://tjj.beijing.gov.cn/EnglishSite/SC/202204/P020220406395809040784.pdf",
+          "scope": "全市城镇常住居民",
+          "incomeDefinition": "城镇居民人均全年可支配收入"
+        }
+      ]
+    },
+    {
+      "id": "beijing-income-historical-2022",
+      "url": "https://tjj.beijing.gov.cn/bwtt_31461/202303/t20230321_2940949.html",
+      "title": "北京2022年官方年度住宅及居民收入资料",
+      "provider": "北京市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/beijing-income-historical-2022.json",
+      "reviewedSha256": "14145a7b68bd967525f1b18e96c6b072a5ee3c305336f93b3dd748a66c19c599",
+      "reviewedRecords": [],
+      "reviewedIncomes": [
+        {
+          "city": "北京",
+          "year": 2022,
+          "urbanDisposableIncomeCnyPerYear": 84023,
+          "sourceId": "beijing-income-historical-2022",
+          "sourceUrl": "https://tjj.beijing.gov.cn/bwtt_31461/202303/t20230321_2940949.html",
+          "scope": "全市城镇常住居民",
+          "incomeDefinition": "城镇居民人均全年可支配收入"
+        }
+      ]
+    },
+    {
+      "id": "shanghai-complete-2016",
+      "url": "https://tjj.sh.gov.cn/tjgb/20170302/0014-293816.html",
+      "title": "上海2016年官方年度住宅及居民收入资料",
+      "provider": "上海市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/shanghai-complete-2016.json",
+      "reviewedSha256": "4725ff04772e0ebc5a27cc3ee31e73cc3f46c7d8707b69a569fdd3d8e518da64",
+      "reviewedRecords": [
+        {
+          "id": "shanghai-complete-2016",
+          "city": "上海",
+          "cityCode": "310000",
+          "period": "2016",
+          "frequency": "annual",
+          "houseType": "new-residential",
+          "scope": "全市房地产开发企业住宅销售",
+          "areaSqm": 20198000,
+          "amountCny": 523329000000,
+          "qualityNote": "官方年度住宅销售指标；保持原发布值及舍入精度，不以开发投资额代替销售金额。"
+        }
+      ],
+      "reviewedIncomes": [
+        {
+          "city": "上海",
+          "year": 2016,
+          "urbanDisposableIncomeCnyPerYear": 57692,
+          "sourceId": "shanghai-complete-2016",
+          "sourceUrl": "https://tjj.sh.gov.cn/tjgb/20170302/0014-293816.html",
+          "scope": "全市城镇常住居民",
+          "incomeDefinition": "城镇居民人均全年可支配收入"
+        }
+      ]
+    },
+    {
+      "id": "shanghai-complete-2017",
+      "url": "https://tjj.sh.gov.cn/tjgb/20180309/0014-1001690.html",
+      "title": "上海2017年官方年度住宅及居民收入资料",
+      "provider": "上海市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/shanghai-complete-2017.json",
+      "reviewedSha256": "a660e0ea27e5b92727b4c0b12e38b964c351882bffc9c40bd49bf3f67b02197f",
+      "reviewedRecords": [
+        {
+          "id": "shanghai-complete-2017",
+          "city": "上海",
+          "cityCode": "310000",
+          "period": "2017",
+          "frequency": "annual",
+          "houseType": "new-residential",
+          "scope": "全市房地产开发企业住宅销售",
+          "areaSqm": 13416200,
+          "amountCny": 333609000000,
+          "qualityNote": "官方年度住宅销售指标；保持原发布值及舍入精度，不以开发投资额代替销售金额。"
+        }
+      ],
+      "reviewedIncomes": [
+        {
+          "city": "上海",
+          "year": 2017,
+          "urbanDisposableIncomeCnyPerYear": 62596,
+          "sourceId": "shanghai-complete-2017",
+          "sourceUrl": "https://tjj.sh.gov.cn/tjgb/20180309/0014-1001690.html",
+          "scope": "全市城镇常住居民",
+          "incomeDefinition": "城镇居民人均全年可支配收入"
+        }
+      ]
+    },
+    {
+      "id": "shanghai-sales-2018",
+      "url": "https://tjj.sh.gov.cn/tjgb/20191115/0014-1003219.html",
+      "title": "上海2018年官方年度住宅及居民收入资料",
+      "provider": "上海市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/shanghai-sales-2018.json",
+      "reviewedSha256": "44873e4febb367b4b07502575a5ccfe3c42c85e455b0b02bad50f924f7b53670",
+      "reviewedRecords": [
+        {
+          "id": "shanghai-sales-2018",
+          "city": "上海",
+          "cityCode": "310000",
+          "period": "2018",
+          "frequency": "annual",
+          "houseType": "new-residential",
+          "scope": "全市房地产开发企业住宅销售",
+          "areaSqm": 13332900,
+          "amountCny": 386403000000,
+          "qualityNote": "官方年度住宅销售指标；保持原发布值及舍入精度，不以开发投资额代替销售金额。"
+        }
+      ],
+      "reviewedIncomes": []
+    },
+    {
+      "id": "shanghai-income-2018",
+      "url": "https://tjj.sh.gov.cn/tjnj/2020tjnj/C1002.htm",
+      "title": "上海2018年官方年度住宅及居民收入资料",
+      "provider": "上海市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/shanghai-income-2018.json",
+      "reviewedSha256": "d62dc6e068b97aaf01d3541955ec4a6fda19616f75403cec31fd1bbacc902392",
+      "reviewedRecords": [],
+      "reviewedIncomes": [
+        {
+          "city": "上海",
+          "year": 2018,
+          "urbanDisposableIncomeCnyPerYear": 68034,
+          "sourceId": "shanghai-income-2018",
+          "sourceUrl": "https://tjj.sh.gov.cn/tjnj/2020tjnj/C1002.htm",
+          "scope": "全市城镇常住居民",
+          "incomeDefinition": "城镇居民人均全年可支配收入"
+        }
+      ]
+    },
+    {
+      "id": "shenzhen-sales-2024",
+      "url": "https://tjj.sz.gov.cn/gkmlpt/content/12/12190/mpost_12190509.html",
+      "title": "深圳2024年官方年度住宅及居民收入资料",
+      "provider": "深圳市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/shenzhen-sales-2024.json",
+      "reviewedSha256": "6839d9e9e17e8121872b17e910baa2e0f5c84c2cc42b3e842f21597b7e1fccf4",
+      "reviewedRecords": [
+        {
+          "id": "shenzhen-sales-2024",
+          "city": "深圳",
+          "cityCode": "440300",
+          "period": "2024",
+          "frequency": "annual",
+          "houseType": "new-residential",
+          "scope": "全市房地产开发企业住宅销售",
+          "areaSqm": 6664900,
+          "amountCny": null,
+          "qualityNote": "官方年度住宅销售指标；保持原发布值及舍入精度，不以开发投资额代替销售金额。"
+        }
+      ],
+      "reviewedIncomes": []
+    },
+    {
+      "id": "shenzhen-sales-2023",
+      "url": "https://tjj.sz.gov.cn/attachment/1/1441/1441551/11264251.pdf",
+      "title": "深圳2023年官方年度住宅及居民收入资料",
+      "provider": "深圳市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/shenzhen-sales-2023.json",
+      "reviewedSha256": "28a9462a886dd0f79e61d94183999bab6d40d4d59a1b7bec0e196d688de67d8d",
+      "reviewedRecords": [
+        {
+          "id": "shenzhen-sales-2023",
+          "city": "深圳",
+          "cityCode": "440300",
+          "period": "2023",
+          "frequency": "annual",
+          "houseType": "new-residential",
+          "scope": "全市房地产开发企业住宅销售",
+          "areaSqm": 6018600,
+          "amountCny": null,
+          "qualityNote": "官方年度住宅销售指标；保持原发布值及舍入精度，不以开发投资额代替销售金额。"
+        }
+      ],
+      "reviewedIncomes": []
+    },
+    {
+      "id": "shenzhen-sales-2022",
+      "url": "https://www.sz.gov.cn/attachment/1/1325/1325426/10740488.pdf",
+      "title": "深圳2022年官方年度住宅及居民收入资料",
+      "provider": "深圳市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/shenzhen-sales-2022.json",
+      "reviewedSha256": "d7bcb9643d126cf82a8fed59dde8144439c3f6a0cec3c3cf3f15938788db3a0d",
+      "reviewedRecords": [
+        {
+          "id": "shenzhen-sales-2022",
+          "city": "深圳",
+          "cityCode": "440300",
+          "period": "2022",
+          "frequency": "annual",
+          "houseType": "new-residential",
+          "scope": "全市房地产开发企业住宅销售",
+          "areaSqm": 5050200,
+          "amountCny": null,
+          "qualityNote": "官方年度住宅销售指标；保持原发布值及舍入精度，不以开发投资额代替销售金额。"
+        }
+      ],
+      "reviewedIncomes": []
+    },
+    {
+      "id": "guangzhou-urban-income-history-2016-2024",
+      "url": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
+      "title": "广州统计信息手册2025：主要年份城镇居民收入（第33页）",
+      "provider": "广州市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/guangzhou-urban-income-history-2016-2024.json",
+      "reviewedSha256": "d309a4154d8c708acb66182b6a241bd9d386dcd7bb905c2f237a09c6f4eee0cb",
+      "reviewedIncomes": [
+        {
+          "city": "广州",
+          "year": 2016,
+          "urbanDisposableIncomeCnyPerYear": 50940.7,
+          "sourceId": "guangzhou-urban-income-history-2016-2024",
+          "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
+          "scope": "全市城镇居民",
+          "incomeDefinition": "城镇居民人均全年可支配收入；广州统计信息手册2025第33页"
+        },
+        {
+          "city": "广州",
+          "year": 2017,
+          "urbanDisposableIncomeCnyPerYear": 55400.49,
+          "sourceId": "guangzhou-urban-income-history-2016-2024",
+          "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
+          "scope": "全市城镇居民",
+          "incomeDefinition": "城镇居民人均全年可支配收入；广州统计信息手册2025第33页"
+        },
+        {
+          "city": "广州",
+          "year": 2018,
+          "urbanDisposableIncomeCnyPerYear": 59982.1,
+          "sourceId": "guangzhou-urban-income-history-2016-2024",
+          "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
+          "scope": "全市城镇居民",
+          "incomeDefinition": "城镇居民人均全年可支配收入；广州统计信息手册2025第33页"
+        },
+        {
+          "city": "广州",
+          "year": 2019,
+          "urbanDisposableIncomeCnyPerYear": 65052.1,
+          "sourceId": "guangzhou-urban-income-history-2016-2024",
+          "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
+          "scope": "全市城镇居民",
+          "incomeDefinition": "城镇居民人均全年可支配收入；广州统计信息手册2025第33页"
+        },
+        {
+          "city": "广州",
+          "year": 2020,
+          "urbanDisposableIncomeCnyPerYear": 68304.1,
+          "sourceId": "guangzhou-urban-income-history-2016-2024",
+          "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
+          "scope": "全市城镇居民",
+          "incomeDefinition": "城镇居民人均全年可支配收入；广州统计信息手册2025第33页"
+        },
+        {
+          "city": "广州",
+          "year": 2021,
+          "urbanDisposableIncomeCnyPerYear": 74416.17,
+          "sourceId": "guangzhou-urban-income-history-2016-2024",
+          "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
+          "scope": "全市城镇居民",
+          "incomeDefinition": "城镇居民人均全年可支配收入；广州统计信息手册2025第33页"
+        },
+        {
+          "city": "广州",
+          "year": 2022,
+          "urbanDisposableIncomeCnyPerYear": 76849.41,
+          "sourceId": "guangzhou-urban-income-history-2016-2024",
+          "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
+          "scope": "全市城镇居民",
+          "incomeDefinition": "城镇居民人均全年可支配收入；广州统计信息手册2025第33页"
+        },
+        {
+          "city": "广州",
+          "year": 2023,
+          "urbanDisposableIncomeCnyPerYear": 80500.86,
+          "sourceId": "guangzhou-urban-income-history-2016-2024",
+          "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
+          "scope": "全市城镇居民",
+          "incomeDefinition": "城镇居民人均全年可支配收入；广州统计信息手册2025第33页"
+        },
+        {
+          "city": "广州",
+          "year": 2024,
+          "urbanDisposableIncomeCnyPerYear": 83435.78,
+          "sourceId": "guangzhou-urban-income-history-2016-2024",
+          "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
+          "scope": "全市城镇居民",
+          "incomeDefinition": "城镇居民人均全年可支配收入；广州统计信息手册2025第33页"
+        }
+      ]
     }
   ],
   "allowedHosts": [
@@ -4018,7 +4657,8 @@
     "www.hunan.gov.cn",
     "www.sz.gov.cn",
     "zjj.sz.gov.cn",
-    "tjj.gz.gov.cn"
+    "tjj.gz.gov.cn",
+    "tjj.sz.gov.cn"
   ],
   "unavailableSources": [
     {

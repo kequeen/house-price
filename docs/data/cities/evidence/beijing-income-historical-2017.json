@@ -1,0 +1,18 @@
+{
+  "sourceUrl": "https://tjj.beijing.gov.cn/zxfbu/202002/t20200216_1633939.html",
+  "title": "北京2017年官方年度住宅及居民收入资料",
+  "reviewedAt": "2026-10-31",
+  "captureKind": "manually-reviewed-official-web-numeric-excerpt",
+  "records": [],
+  "incomes": [
+    {
+      "city": "北京",
+      "year": 2017,
+      "urbanDisposableIncomeCnyPerYear": 62406,
+      "sourceId": "beijing-income-historical-2017",
+      "sourceUrl": "https://tjj.beijing.gov.cn/zxfbu/202002/t20200216_1633939.html",
+      "scope": "全市城镇常住居民",
+      "incomeDefinition": "城镇居民人均全年可支配收入"
+    }
+  ]
+}
