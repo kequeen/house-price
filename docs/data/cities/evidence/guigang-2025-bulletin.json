@@ -1,0 +1,32 @@
+{
+  "sourceUrl": "https://www.ggnews.com.cn/news/yaowen/2026-07-01/127998.html",
+  "title": "贵港市2025年国民经济和社会发展统计公报",
+  "reviewedAt": "2026-10-31",
+  "captureKind": "manually-reviewed-published-numeric-excerpt",
+  "sourceType": "official-bulletin-republication",
+  "records": [
+    {
+      "id": "guigang-2025-bulletin-sales",
+      "city": "贵港",
+      "cityCode": "450800",
+      "period": "2025",
+      "frequency": "annual",
+      "houseType": "new-residential",
+      "scope": "全市住宅销售",
+      "areaSqm": 1387300,
+      "amountCny": null,
+      "qualityNote": "贵港2025年全市住宅销售面积138.73万平方米、城镇收入已接入；缺住宅销售金额。 官方公报核读数值；金额缺失保留空值，不以投资额代替。"
+    }
+  ],
+  "incomes": [
+    {
+      "city": "贵港",
+      "year": 2025,
+      "urbanDisposableIncomeCnyPerYear": 42297,
+      "scope": "全市城镇居民",
+      "incomeDefinition": "城镇居民人均全年可支配收入，不是就业工资",
+      "sourceId": "guigang-2025-bulletin",
+      "sourceUrl": "https://www.ggnews.com.cn/news/yaowen/2026-07-01/127998.html"
+    }
+  ]
+}

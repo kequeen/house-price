@@ -111,6 +111,22 @@
       "coverageStatus": "auxiliary-only",
       "coverageNote": "2025年全部商品房销售面积、金额与城镇居民收入已接入；公报转载自昆明发布，全部商品房含非住宅，不计算住宅收入比。",
       "regionName": "云南"
+    },
+    {
+      "id": "450800",
+      "name": "贵港",
+      "provinceCode": "450000",
+      "regionName": "广西",
+      "coverageStatus": "collected",
+      "coverageNote": "贵港2025年全市住宅销售面积138.73万平方米、城镇收入已接入；缺住宅销售金额。"
+    },
+    {
+      "id": "360700",
+      "name": "赣州",
+      "provinceCode": "360000",
+      "regionName": "江西",
+      "coverageStatus": "auxiliary-only",
+      "coverageNote": "赣州2025年全部新建商品房销售面积611.11万平方米、金额371.04亿元及城镇收入已接入；未拆分住宅，不计算住宅收入比。"
     }
   ],
   "sources": [
@@ -1796,6 +1812,38 @@
       "evidenceSha256": "d3cec286bb4dae5ceec3c721bcab0d1e29faa8c8b9993b8b0bd4453322a2345d",
       "fetchedAt": "2026-10-31",
       "evidenceNote": "统计公报转载网页核读摘录；媒体及原发布者见来源署名，摘录哈希不是原文HTML哈希。"
+    },
+    {
+      "id": "guigang-2025-bulletin",
+      "url": "https://www.ggnews.com.cn/news/yaowen/2026-07-01/127998.html",
+      "title": "贵港市2025年国民经济和社会发展统计公报",
+      "provider": "贵港新闻网（贵港市统计公报发布）",
+      "kind": "statistics",
+      "sourceType": "official-bulletin-republication",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/guigang-2025-bulletin.json",
+      "status": "reviewed-evidence",
+      "rawSha256": null,
+      "evidenceSha256": "ee288a81824300060953936d1b09cfd8848db0b22fb831b45f427eb6f71bcf4d",
+      "fetchedAt": "2026-10-31",
+      "evidenceNote": "统计公报转载网页核读摘录；媒体及原发布者见来源署名，摘录哈希不是原文HTML哈希。"
+    },
+    {
+      "id": "ganzhou-2025-bulletin",
+      "url": "https://www.ganzhou.gov.cn/gzszf/c100022/202604/38a12f964da545109b1b16697faee249.shtml",
+      "title": "赣州市2025年国民经济和社会发展统计公报",
+      "provider": "赣州市人民政府、市统计局",
+      "kind": "statistics",
+      "sourceType": "official-primary",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/ganzhou-2025-bulletin.json",
+      "status": "reviewed-evidence",
+      "rawSha256": null,
+      "evidenceSha256": "e845eb7bfdb5dbe4884160c36cc79a80305d6f76db22595fb60c4e84cb804d1a",
+      "fetchedAt": "2026-10-31",
+      "evidenceNote": "官方公开网页核读摘录；摘录哈希不是原文HTML哈希。"
     }
   ],
   "records": [
@@ -23962,6 +24010,52 @@
         "amountCny": "元",
         "priceCnyPerSqm": "元/平方米"
       }
+    },
+    {
+      "id": "guigang-2025-bulletin-sales",
+      "city": "贵港",
+      "cityCode": "450800",
+      "period": "2025",
+      "frequency": "annual",
+      "houseType": "new-residential",
+      "scope": "全市住宅销售",
+      "areaSqm": 1387300,
+      "amountCny": null,
+      "qualityNote": "贵港2025年全市住宅销售面积138.73万平方米、城镇收入已接入；缺住宅销售金额。 官方公报核读数值；金额缺失保留空值，不以投资额代替。",
+      "sourceId": "guigang-2025-bulletin",
+      "sourceUrl": "https://www.ggnews.com.cn/news/yaowen/2026-07-01/127998.html",
+      "district": null,
+      "count": null,
+      "priceCnyPerSqm": null,
+      "units": {
+        "count": "套",
+        "areaSqm": "平方米",
+        "amountCny": "元",
+        "priceCnyPerSqm": "元/平方米"
+      }
+    },
+    {
+      "id": "ganzhou-2025-bulletin-sales",
+      "city": "赣州",
+      "cityCode": "360700",
+      "period": "2025",
+      "frequency": "annual",
+      "houseType": "new-all-commercial",
+      "scope": "全市全部新建商品房销售（含非住宅）",
+      "areaSqm": 6111100,
+      "amountCny": 37104000000,
+      "qualityNote": "赣州2025年全部新建商品房销售面积611.11万平方米、金额371.04亿元及城镇收入已接入；未拆分住宅，不计算住宅收入比。 官方公报核读数值；金额缺失保留空值，不以投资额代替。",
+      "sourceId": "ganzhou-2025-bulletin",
+      "sourceUrl": "https://www.ganzhou.gov.cn/gzszf/c100022/202604/38a12f964da545109b1b16697faee249.shtml",
+      "district": null,
+      "count": null,
+      "priceCnyPerSqm": null,
+      "units": {
+        "count": "套",
+        "areaSqm": "平方米",
+        "amountCny": "元",
+        "priceCnyPerSqm": "元/平方米"
+      }
     }
   ],
   "incomes": [
@@ -24261,6 +24355,24 @@
       "incomeDefinition": "城镇居民人均年可支配收入，不是就业工资",
       "sourceId": "kunming-2025-bulletin-reprint",
       "sourceUrl": "https://www.kunming.cn/news/c/2026-05-22/14043565.shtml"
+    },
+    {
+      "city": "贵港",
+      "year": 2025,
+      "urbanDisposableIncomeCnyPerYear": 42297,
+      "scope": "全市城镇居民",
+      "incomeDefinition": "城镇居民人均全年可支配收入，不是就业工资",
+      "sourceId": "guigang-2025-bulletin",
+      "sourceUrl": "https://www.ggnews.com.cn/news/yaowen/2026-07-01/127998.html"
+    },
+    {
+      "city": "赣州",
+      "year": 2025,
+      "urbanDisposableIncomeCnyPerYear": 48188,
+      "scope": "全市城镇居民",
+      "incomeDefinition": "城镇居民人均全年可支配收入，不是就业工资",
+      "sourceId": "ganzhou-2025-bulletin",
+      "sourceUrl": "https://www.ganzhou.gov.cn/gzszf/c100022/202604/38a12f964da545109b1b16697faee249.shtml"
     }
   ],
   "annualAffordability": [
