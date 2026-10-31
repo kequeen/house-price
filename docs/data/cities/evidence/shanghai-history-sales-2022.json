@@ -1,0 +1,21 @@
+{
+  "sourceUrl": "https://tjj.sh.gov.cn/tjnj/2022tjnj/C1803.htm",
+  "title": "上海统计年鉴2022 表18.3：2021住宅销售",
+  "reviewedAt": "2026-10-31",
+  "captureKind": "manually-reviewed-official-web-numeric-excerpt",
+  "records": [
+    {
+      "id": "sh-historical-residential-2021",
+      "city": "上海",
+      "cityCode": "310000",
+      "period": "2021",
+      "frequency": "annual",
+      "houseType": "new-residential",
+      "scope": "全市房地产开发企业住宅销售",
+      "areaSqm": 14899500,
+      "amountCny": 610495000000,
+      "qualityNote": "上海统计年鉴住宅销售面积及销售额；官方网页核读摘录，按年鉴单位换算；统计销售与网签口径不同。"
+    }
+  ],
+  "incomes": []
+}

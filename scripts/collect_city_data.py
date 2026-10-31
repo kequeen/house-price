@@ -220,7 +220,7 @@ def collect(config, offline=False, refresh=False, interval=1.0):
     session.close()
     baselines = []
     for r in all_records:
-        if r['district'] or r['frequency'] != 'annual' or r['houseType'] != 'new-residential' or not r['priceCnyPerSqm']:
+        if r.get('excludeFromAnnualAffordability') or r['district'] or r['frequency'] != 'annual' or r['houseType'] != 'new-residential' or not r['priceCnyPerSqm']:
             continue
         matched = next((inc for inc in incomes if inc['city'] == r['city'] and str(inc['year']) == r['period']), None)
         if matched:

@@ -1,0 +1,24 @@
+{
+  "sourceUrl": "https://tjj.sh.gov.cn/tjnj/2022tjnj/C0910.htm",
+  "title": "上海统计年鉴2022 表9.10：2019—2021城镇收入",
+  "reviewedAt": "2026-10-31",
+  "captureKind": "manually-reviewed-official-web-numeric-excerpt",
+  "records": [],
+  "incomes": [
+    {
+      "city": "上海",
+      "year": 2019,
+      "urbanDisposableIncomeCnyPerYear": 73615
+    },
+    {
+      "city": "上海",
+      "year": 2020,
+      "urbanDisposableIncomeCnyPerYear": 76437
+    },
+    {
+      "city": "上海",
+      "year": 2021,
+      "urbanDisposableIncomeCnyPerYear": 82429
+    }
+  ]
+}

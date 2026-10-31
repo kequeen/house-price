@@ -1,0 +1,19 @@
+{
+  "sourceUrl": "https://tjj.sh.gov.cn/tjnj/2024tjnj/C0902.htm",
+  "title": "上海统计年鉴2024 表9.2：2022—2023城镇收入",
+  "reviewedAt": "2026-10-31",
+  "captureKind": "manually-reviewed-official-web-numeric-excerpt",
+  "records": [],
+  "incomes": [
+    {
+      "city": "上海",
+      "year": 2022,
+      "urbanDisposableIncomeCnyPerYear": 84034
+    },
+    {
+      "city": "上海",
+      "year": 2023,
+      "urbanDisposableIncomeCnyPerYear": 89477
+    }
+  ]
+}

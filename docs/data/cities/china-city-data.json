@@ -16,7 +16,7 @@
       "name": "上海",
       "provinceCode": "310000",
       "coverageStatus": "collected",
-      "coverageNote": "2025住宅销售金额、面积与城镇收入完整；2026年1—9月住宅面积单列。近期两份来源为官方网页核读数值摘录。"
+      "coverageNote": "2019—2025住宅销售金额、面积与城镇收入完整；2026年1—9月住宅面积单列。历史资料为官方网页核读摘录。"
     },
     {
       "id": "130100",
@@ -44,7 +44,7 @@
       "name": "广州",
       "provinceCode": "440000",
       "coverageStatus": "collected",
-      "coverageNote": "2025年城镇人均收入已接入；2026年7月住宅面积同比、二手套均网签金额单列。住宅销售金额和面积待配齐。"
+      "coverageNote": "2023—2024年新建住宅现售和预售网签数据及2025年城镇收入已接入；网签与统计销售口径不同，暂不计算同年收入比。"
     },
     {
       "id": "442000",
@@ -1272,6 +1272,96 @@
       "status": "reviewed-evidence",
       "rawSha256": null,
       "evidenceSha256": "aec968104067363590cc77bd3e3c511021cb3040afd93177230a46d3d14adbaf",
+      "fetchedAt": "2026-10-31",
+      "evidenceNote": "官方公开网页核读摘录；摘录哈希不是原文HTML哈希。"
+    },
+    {
+      "id": "shanghai-history-sales-2021",
+      "url": "https://tjj.sh.gov.cn/tjnj/2021tjnj/C1803.htm",
+      "title": "上海统计年鉴2021 表18.3：2019—2020住宅销售",
+      "provider": "上海市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "evidenceFile": "docs/data/cities/evidence/shanghai-history-sales-2021.json",
+      "reviewedAt": "2026-10-31",
+      "status": "reviewed-evidence",
+      "rawSha256": null,
+      "evidenceSha256": "853d92cb0c183508ecfabd0c21febc8a4534af78c373868859674034278a0cd1",
+      "fetchedAt": "2026-10-31",
+      "evidenceNote": "官方公开网页核读摘录；摘录哈希不是原文HTML哈希。"
+    },
+    {
+      "id": "shanghai-history-sales-2022",
+      "url": "https://tjj.sh.gov.cn/tjnj/2022tjnj/C1803.htm",
+      "title": "上海统计年鉴2022 表18.3：2021住宅销售",
+      "provider": "上海市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "evidenceFile": "docs/data/cities/evidence/shanghai-history-sales-2022.json",
+      "reviewedAt": "2026-10-31",
+      "status": "reviewed-evidence",
+      "rawSha256": null,
+      "evidenceSha256": "a115aef28f04be4f50f5494eb0216fe494012f10664ceda2ccbfa6075f53566e",
+      "fetchedAt": "2026-10-31",
+      "evidenceNote": "官方公开网页核读摘录；摘录哈希不是原文HTML哈希。"
+    },
+    {
+      "id": "shanghai-history-sales-2024",
+      "url": "https://tjj.sh.gov.cn/tjnj/2024tjnj/C1803.htm",
+      "title": "上海统计年鉴2024 表18.3：2022—2023住宅销售",
+      "provider": "上海市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "evidenceFile": "docs/data/cities/evidence/shanghai-history-sales-2024.json",
+      "reviewedAt": "2026-10-31",
+      "status": "reviewed-evidence",
+      "rawSha256": null,
+      "evidenceSha256": "524af36382b684763f48b4426c885d3a9b33fb0c9f0bac31d91b2a4adb38d71c",
+      "fetchedAt": "2026-10-31",
+      "evidenceNote": "官方公开网页核读摘录；摘录哈希不是原文HTML哈希。"
+    },
+    {
+      "id": "shanghai-history-income-2022",
+      "url": "https://tjj.sh.gov.cn/tjnj/2022tjnj/C0910.htm",
+      "title": "上海统计年鉴2022 表9.10：2019—2021城镇收入",
+      "provider": "上海市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "evidenceFile": "docs/data/cities/evidence/shanghai-history-income-2022.json",
+      "reviewedAt": "2026-10-31",
+      "status": "reviewed-evidence",
+      "rawSha256": null,
+      "evidenceSha256": "72f900d616cf1caaa1cad68b0ba232b174567d345cc8ea295cba599a2d6a9e0d",
+      "fetchedAt": "2026-10-31",
+      "evidenceNote": "官方公开网页核读摘录；摘录哈希不是原文HTML哈希。"
+    },
+    {
+      "id": "shanghai-history-income-2024",
+      "url": "https://tjj.sh.gov.cn/tjnj/2024tjnj/C0902.htm",
+      "title": "上海统计年鉴2024 表9.2：2022—2023城镇收入",
+      "provider": "上海市统计局",
+      "kind": "statistics",
+      "parser": "reviewed-evidence",
+      "evidenceFile": "docs/data/cities/evidence/shanghai-history-income-2024.json",
+      "reviewedAt": "2026-10-31",
+      "status": "reviewed-evidence",
+      "rawSha256": null,
+      "evidenceSha256": "6ef46b5e3ac5a8c3f14f31c51aa7f42a507081fa83e8ce531a1846b03e2b6503",
+      "fetchedAt": "2026-10-31",
+      "evidenceNote": "官方公开网页核读摘录；摘录哈希不是原文HTML哈希。"
+    },
+    {
+      "id": "guangzhou-yearbook-2025-housing-2023-24",
+      "url": "https://tjj.gz.gov.cn/attachment/7/7965/7965837/10602898.pdf",
+      "title": "广州统计年鉴2025 表1-29 全市房地产市场交易情况",
+      "provider": "广州市统计局、广州市住建局",
+      "kind": "housing-department",
+      "parser": "reviewed-evidence",
+      "evidenceFile": "docs/data/cities/evidence/guangzhou-yearbook-2025-housing-2023-24.json",
+      "reviewedAt": "2026-10-31",
+      "status": "reviewed-evidence",
+      "rawSha256": null,
+      "evidenceSha256": "5e377766dca2f5748f92e0380dcf5a306796455e47d5fb7bd0de6155af209ae8",
       "fetchedAt": "2026-10-31",
       "evidenceNote": "官方公开网页核读摘录；摘录哈希不是原文HTML哈希。"
     }
@@ -22812,6 +22902,169 @@
         "amountCny": "元",
         "priceCnyPerSqm": "元/平方米"
       }
+    },
+    {
+      "id": "sh-historical-residential-2019",
+      "city": "上海",
+      "cityCode": "310000",
+      "period": "2019",
+      "frequency": "annual",
+      "houseType": "new-residential",
+      "scope": "全市房地产开发企业住宅销售",
+      "areaSqm": 13537000,
+      "amountCny": 445716000000,
+      "qualityNote": "上海统计年鉴住宅销售面积及销售额；官方网页核读摘录，按年鉴单位换算；统计销售与网签口径不同。",
+      "sourceId": "shanghai-history-sales-2021",
+      "sourceUrl": "https://tjj.sh.gov.cn/tjnj/2021tjnj/C1803.htm",
+      "district": null,
+      "count": null,
+      "priceCnyPerSqm": 32925.75903080446,
+      "units": {
+        "count": "套",
+        "areaSqm": "平方米",
+        "amountCny": "元",
+        "priceCnyPerSqm": "元/平方米"
+      }
+    },
+    {
+      "id": "sh-historical-residential-2020",
+      "city": "上海",
+      "cityCode": "310000",
+      "period": "2020",
+      "frequency": "annual",
+      "houseType": "new-residential",
+      "scope": "全市房地产开发企业住宅销售",
+      "areaSqm": 14340700,
+      "amountCny": 526885000000,
+      "qualityNote": "上海统计年鉴住宅销售面积及销售额；官方网页核读摘录，按年鉴单位换算；统计销售与网签口径不同。",
+      "sourceId": "shanghai-history-sales-2021",
+      "sourceUrl": "https://tjj.sh.gov.cn/tjnj/2021tjnj/C1803.htm",
+      "district": null,
+      "count": null,
+      "priceCnyPerSqm": 36740.5356781747,
+      "units": {
+        "count": "套",
+        "areaSqm": "平方米",
+        "amountCny": "元",
+        "priceCnyPerSqm": "元/平方米"
+      }
+    },
+    {
+      "id": "sh-historical-residential-2021",
+      "city": "上海",
+      "cityCode": "310000",
+      "period": "2021",
+      "frequency": "annual",
+      "houseType": "new-residential",
+      "scope": "全市房地产开发企业住宅销售",
+      "areaSqm": 14899500,
+      "amountCny": 610495000000,
+      "qualityNote": "上海统计年鉴住宅销售面积及销售额；官方网页核读摘录，按年鉴单位换算；统计销售与网签口径不同。",
+      "sourceId": "shanghai-history-sales-2022",
+      "sourceUrl": "https://tjj.sh.gov.cn/tjnj/2022tjnj/C1803.htm",
+      "district": null,
+      "count": null,
+      "priceCnyPerSqm": 40974.19376489144,
+      "units": {
+        "count": "套",
+        "areaSqm": "平方米",
+        "amountCny": "元",
+        "priceCnyPerSqm": "元/平方米"
+      }
+    },
+    {
+      "id": "sh-historical-residential-2022",
+      "city": "上海",
+      "cityCode": "310000",
+      "period": "2022",
+      "frequency": "annual",
+      "houseType": "new-residential",
+      "scope": "全市房地产开发企业住宅销售",
+      "areaSqm": 15615100,
+      "amountCny": 693777000000,
+      "qualityNote": "上海统计年鉴住宅销售面积及销售额；官方网页核读摘录，按年鉴单位换算；统计销售与网签口径不同。",
+      "sourceId": "shanghai-history-sales-2024",
+      "sourceUrl": "https://tjj.sh.gov.cn/tjnj/2024tjnj/C1803.htm",
+      "district": null,
+      "count": null,
+      "priceCnyPerSqm": 44429.878771189426,
+      "units": {
+        "count": "套",
+        "areaSqm": "平方米",
+        "amountCny": "元",
+        "priceCnyPerSqm": "元/平方米"
+      }
+    },
+    {
+      "id": "sh-historical-residential-2023",
+      "city": "上海",
+      "cityCode": "310000",
+      "period": "2023",
+      "frequency": "annual",
+      "houseType": "new-residential",
+      "scope": "全市房地产开发企业住宅销售",
+      "areaSqm": 14569600,
+      "amountCny": 670164000000,
+      "qualityNote": "上海统计年鉴住宅销售面积及销售额；官方网页核读摘录，按年鉴单位换算；统计销售与网签口径不同。",
+      "sourceId": "shanghai-history-sales-2024",
+      "sourceUrl": "https://tjj.sh.gov.cn/tjnj/2024tjnj/C1803.htm",
+      "district": null,
+      "count": null,
+      "priceCnyPerSqm": 45997.41928398858,
+      "units": {
+        "count": "套",
+        "areaSqm": "平方米",
+        "amountCny": "元",
+        "priceCnyPerSqm": "元/平方米"
+      }
+    },
+    {
+      "id": "guangzhou-housing-combined-2023",
+      "city": "广州",
+      "cityCode": "440100",
+      "period": "2023",
+      "frequency": "annual",
+      "houseType": "new-residential",
+      "scope": "全市新建住宅现售及预售网签合计",
+      "count": 76515,
+      "areaSqm": 8403400,
+      "amountCny": 300064460000,
+      "excludeFromAnnualAffordability": true,
+      "qualityNote": "广州统计年鉴2025表1-29：住宅现售与预售网签数据相加。2023年现售182.77、预售657.57万㎡；金额分别4892990、25113456万元。与开发企业统计销售口径不同，不进入年度收入比。",
+      "sourceId": "guangzhou-yearbook-2025-housing-2023-24",
+      "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7965/7965837/10602898.pdf",
+      "district": null,
+      "priceCnyPerSqm": 35707.50648547017,
+      "units": {
+        "count": "套",
+        "areaSqm": "平方米",
+        "amountCny": "元",
+        "priceCnyPerSqm": "元/平方米"
+      }
+    },
+    {
+      "id": "guangzhou-housing-combined-2024",
+      "city": "广州",
+      "cityCode": "440100",
+      "period": "2024",
+      "frequency": "annual",
+      "houseType": "new-residential",
+      "scope": "全市新建住宅现售及预售网签合计",
+      "count": 73785,
+      "areaSqm": 8092800,
+      "amountCny": 266701840000,
+      "excludeFromAnnualAffordability": true,
+      "qualityNote": "广州统计年鉴2025表1-29：住宅现售与预售网签数据相加。2024年现售264.68、预售544.6万㎡；金额分别6193454、20476730万元。与开发企业统计销售口径不同，不进入年度收入比。",
+      "sourceId": "guangzhou-yearbook-2025-housing-2023-24",
+      "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7965/7965837/10602898.pdf",
+      "district": null,
+      "priceCnyPerSqm": 32955.446816923686,
+      "units": {
+        "count": "套",
+        "areaSqm": "平方米",
+        "amountCny": "元",
+        "priceCnyPerSqm": "元/平方米"
+      }
     }
   ],
   "incomes": [
@@ -22886,6 +23139,51 @@
       "incomeDefinition": "城镇居民人均可支配收入，不是就业工资",
       "sourceId": "guangzhou-income-2025",
       "sourceUrl": "https://tjj.gz.gov.cn/stats_newtjyw/sjjd/content/post_10669102.html"
+    },
+    {
+      "city": "上海",
+      "year": 2019,
+      "urbanDisposableIncomeCnyPerYear": 73615,
+      "sourceId": "shanghai-history-income-2022",
+      "sourceUrl": "https://tjj.sh.gov.cn/tjnj/2022tjnj/C0910.htm",
+      "scope": "全市城镇常住居民",
+      "incomeDefinition": "城镇常住居民人均可支配收入，不是就业人员工资"
+    },
+    {
+      "city": "上海",
+      "year": 2020,
+      "urbanDisposableIncomeCnyPerYear": 76437,
+      "sourceId": "shanghai-history-income-2022",
+      "sourceUrl": "https://tjj.sh.gov.cn/tjnj/2022tjnj/C0910.htm",
+      "scope": "全市城镇常住居民",
+      "incomeDefinition": "城镇常住居民人均可支配收入，不是就业人员工资"
+    },
+    {
+      "city": "上海",
+      "year": 2021,
+      "urbanDisposableIncomeCnyPerYear": 82429,
+      "sourceId": "shanghai-history-income-2022",
+      "sourceUrl": "https://tjj.sh.gov.cn/tjnj/2022tjnj/C0910.htm",
+      "scope": "全市城镇常住居民",
+      "incomeDefinition": "城镇常住居民人均可支配收入，不是就业人员工资"
+    },
+    {
+      "city": "上海",
+      "year": 2022,
+      "urbanDisposableIncomeCnyPerYear": 84034,
+      "sourceId": "shanghai-history-income-2024",
+      "sourceUrl": "https://tjj.sh.gov.cn/tjnj/2024tjnj/C0902.htm",
+      "scope": "全市城镇常住居民",
+      "incomeDefinition": "城镇常住居民人均可支配收入，不是就业人员工资"
+    },
+    {
+      "city": "上海",
+      "year": 2023,
+      "urbanDisposableIncomeCnyPerYear": 89477,
+      "sourceId": "shanghai-history-income-2024",
+      "sourceUrl": "https://tjj.sh.gov.cn/tjnj/2024tjnj/C0902.htm",
+      "scope": "全市城镇常住居民",
+      "incomeDefinition": "城镇常住居民人均可支配收入，不是就业人员工资"
     }
   ],
   "annualAffordability": [
@@ -22935,6 +23233,66 @@
       "salesAmountCny": 566749000000,
       "salesSourceId": "shanghai-2025-communique",
       "incomeSourceId": "shanghai-2025-communique",
+      "scope": "全市房地产开发企业住宅销售"
+    },
+    {
+      "id": "sh-historical-residential-2019",
+      "city": "上海",
+      "year": 2019,
+      "priceCnyPerSqm": 32925.75903080446,
+      "urbanDisposableIncomeCnyPerYear": 73615,
+      "salesAreaSqm": 13537000,
+      "salesAmountCny": 445716000000,
+      "salesSourceId": "shanghai-history-sales-2021",
+      "incomeSourceId": "shanghai-history-income-2022",
+      "scope": "全市房地产开发企业住宅销售"
+    },
+    {
+      "id": "sh-historical-residential-2020",
+      "city": "上海",
+      "year": 2020,
+      "priceCnyPerSqm": 36740.5356781747,
+      "urbanDisposableIncomeCnyPerYear": 76437,
+      "salesAreaSqm": 14340700,
+      "salesAmountCny": 526885000000,
+      "salesSourceId": "shanghai-history-sales-2021",
+      "incomeSourceId": "shanghai-history-income-2022",
+      "scope": "全市房地产开发企业住宅销售"
+    },
+    {
+      "id": "sh-historical-residential-2021",
+      "city": "上海",
+      "year": 2021,
+      "priceCnyPerSqm": 40974.19376489144,
+      "urbanDisposableIncomeCnyPerYear": 82429,
+      "salesAreaSqm": 14899500,
+      "salesAmountCny": 610495000000,
+      "salesSourceId": "shanghai-history-sales-2022",
+      "incomeSourceId": "shanghai-history-income-2022",
+      "scope": "全市房地产开发企业住宅销售"
+    },
+    {
+      "id": "sh-historical-residential-2022",
+      "city": "上海",
+      "year": 2022,
+      "priceCnyPerSqm": 44429.878771189426,
+      "urbanDisposableIncomeCnyPerYear": 84034,
+      "salesAreaSqm": 15615100,
+      "salesAmountCny": 693777000000,
+      "salesSourceId": "shanghai-history-sales-2024",
+      "incomeSourceId": "shanghai-history-income-2024",
+      "scope": "全市房地产开发企业住宅销售"
+    },
+    {
+      "id": "sh-historical-residential-2023",
+      "city": "上海",
+      "year": 2023,
+      "priceCnyPerSqm": 45997.41928398858,
+      "urbanDisposableIncomeCnyPerYear": 89477,
+      "salesAreaSqm": 14569600,
+      "salesAmountCny": 670164000000,
+      "salesSourceId": "shanghai-history-sales-2024",
+      "incomeSourceId": "shanghai-history-income-2024",
       "scope": "全市房地产开发企业住宅销售"
     }
   ],
