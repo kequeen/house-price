@@ -87,6 +87,30 @@
       "provinceCode": "610000",
       "coverageStatus": "not-collected",
       "coverageNote": "找到第三方新闻发布会报道，尚无可核验当地原始页面，不采用。"
+    },
+    {
+      "id": "450100",
+      "name": "南宁",
+      "provinceCode": "450000",
+      "coverageStatus": "collected",
+      "coverageNote": "2024年全市住宅销售面积、城镇居民收入已接入；来源为中国网中国南宁转载南宁日报统计公报，未公开同口径住宅金额。",
+      "regionName": "广西"
+    },
+    {
+      "id": "360100",
+      "name": "南昌",
+      "provinceCode": "360000",
+      "coverageStatus": "collected",
+      "coverageNote": "2024年市本级普通商品住房销售面积、套数已接入，范围不等于全市；2025公报图片暂未完成核读。",
+      "regionName": "江西"
+    },
+    {
+      "id": "530100",
+      "name": "昆明",
+      "provinceCode": "530000",
+      "coverageStatus": "auxiliary-only",
+      "coverageNote": "2025年全部商品房销售面积、金额与城镇居民收入已接入；公报转载自昆明发布，全部商品房含非住宅，不计算住宅收入比。",
+      "regionName": "云南"
     }
   ],
   "sources": [
@@ -1724,6 +1748,54 @@
       "evidenceSha256": "d309a4154d8c708acb66182b6a241bd9d386dcd7bb905c2f237a09c6f4eee0cb",
       "fetchedAt": "2026-10-31",
       "evidenceNote": "官方公开网页核读摘录；摘录哈希不是原文HTML哈希。"
+    },
+    {
+      "id": "nanning-2024-bulletin-reprint",
+      "url": "https://nanning.china.com.cn/2025-05/16/content_43118751.htm",
+      "title": "2024年南宁市国民经济和社会发展统计公报（中国网中国南宁转载）",
+      "provider": "中国网中国南宁，来源：南宁日报（统计公报转载）",
+      "kind": "statistics",
+      "sourceType": "official-bulletin-republication",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/nanning-2024-bulletin-reprint.json",
+      "status": "reviewed-evidence",
+      "rawSha256": null,
+      "evidenceSha256": "2e52073960535815e528a1dc7576e50cd81a986e9679b88b7dfcb63a04d41739",
+      "fetchedAt": "2026-10-31",
+      "evidenceNote": "统计公报转载网页核读摘录；媒体及原发布者见来源署名，摘录哈希不是原文HTML哈希。"
+    },
+    {
+      "id": "nanchang-plan-review-2024",
+      "url": "https://zjj.nc.gov.cn/nczfbzglj/fgxw/202504/26c8af15175b4bea90498f6e955496dc.shtml",
+      "title": "南昌市2025年住房发展年度计划征求意见稿：2024年回顾",
+      "provider": "南昌市住房和城乡建设局",
+      "kind": "housing-department",
+      "sourceType": "official-primary",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/nanchang-plan-review-2024.json",
+      "status": "reviewed-evidence",
+      "rawSha256": null,
+      "evidenceSha256": "4dada75459993b7c8d55b46f87e4b2c18f03cfb5167e2f223b5d6aee8f4c7839",
+      "fetchedAt": "2026-10-31",
+      "evidenceNote": "官方公开网页核读摘录；摘录哈希不是原文HTML哈希。"
+    },
+    {
+      "id": "kunming-2025-bulletin-reprint",
+      "url": "https://www.kunming.cn/news/c/2026-05-22/14043565.shtml",
+      "title": "昆明市2025年国民经济和社会发展统计公报（昆明发布转载）",
+      "provider": "昆明信息港，来源：昆明发布（统计公报转载）",
+      "kind": "statistics",
+      "sourceType": "official-bulletin-republication",
+      "parser": "reviewed-evidence",
+      "reviewedAt": "2026-10-31",
+      "evidenceFile": "docs/data/cities/evidence/kunming-2025-bulletin-reprint.json",
+      "status": "reviewed-evidence",
+      "rawSha256": null,
+      "evidenceSha256": "d3cec286bb4dae5ceec3c721bcab0d1e29faa8c8b9993b8b0bd4453322a2345d",
+      "fetchedAt": "2026-10-31",
+      "evidenceNote": "统计公报转载网页核读摘录；媒体及原发布者见来源署名，摘录哈希不是原文HTML哈希。"
     }
   ],
   "records": [
@@ -23819,6 +23891,77 @@
         "amountCny": "元",
         "priceCnyPerSqm": "元/平方米"
       }
+    },
+    {
+      "id": "nanning-residential-2024",
+      "city": "南宁",
+      "cityCode": "450100",
+      "period": "2024",
+      "frequency": "annual",
+      "houseType": "new-residential",
+      "scope": "南宁市全市住宅销售",
+      "areaSqm": 4705700,
+      "qualityNote": "公报原文住宅销售面积470.57万平方米。住宅投资247.97亿元是开发投资，不作为销售金额；未取得住宅销售金额，不计算价格及收入比。",
+      "sourceId": "nanning-2024-bulletin-reprint",
+      "sourceUrl": "https://nanning.china.com.cn/2025-05/16/content_43118751.htm",
+      "district": null,
+      "count": null,
+      "amountCny": null,
+      "priceCnyPerSqm": null,
+      "units": {
+        "count": "套",
+        "areaSqm": "平方米",
+        "amountCny": "元",
+        "priceCnyPerSqm": "元/平方米"
+      }
+    },
+    {
+      "id": "nanchang-city-level-residential-2024",
+      "city": "南昌",
+      "cityCode": "360100",
+      "period": "2024",
+      "frequency": "annual",
+      "houseType": "new-residential",
+      "scope": "市本级新建普通商品住房（非全市）",
+      "count": 20645,
+      "areaSqm": 2449500,
+      "excludeFromAnnualAffordability": true,
+      "qualityNote": "取年度计划征求意见稿回顾中的2024年实际销售244.95万平方米、20645套；不是2025年规划目标，不是全部商品房，不等同全市口径，不配用全市收入计算。",
+      "sourceId": "nanchang-plan-review-2024",
+      "sourceUrl": "https://zjj.nc.gov.cn/nczfbzglj/fgxw/202504/26c8af15175b4bea90498f6e955496dc.shtml",
+      "district": null,
+      "amountCny": null,
+      "priceCnyPerSqm": null,
+      "units": {
+        "count": "套",
+        "areaSqm": "平方米",
+        "amountCny": "元",
+        "priceCnyPerSqm": "元/平方米"
+      }
+    },
+    {
+      "id": "kunming-commercial-2025",
+      "city": "昆明",
+      "cityCode": "530100",
+      "period": "2025",
+      "frequency": "annual",
+      "houseType": "new-all-commercial",
+      "scope": "全市全部商品房销售，含非住宅",
+      "areaSqm": 6457300,
+      "amountCny": 54342000000,
+      "excludeFromAnnualAffordability": true,
+      "qualityNote": "公报只给全部商品房销售面积645.73万平方米、金额543.42亿元。389.27亿元为住宅投资，不能用作住宅销售金额。保留原文含磨憨等指标范围差异，收入与房屋范围未配齐，不计算住宅均价及收入比。",
+      "sourceId": "kunming-2025-bulletin-reprint",
+      "sourceUrl": "https://www.kunming.cn/news/c/2026-05-22/14043565.shtml",
+      "district": null,
+      "count": null,
+      "priceCnyPerSqm": null,
+      "units": {
+        "count": "套",
+        "areaSqm": "平方米",
+        "amountCny": "元",
+        "priceCnyPerSqm": "元/平方米"
+      }
     }
   ],
   "incomes": [
@@ -24100,6 +24243,24 @@
       "sourceUrl": "https://tjj.gz.gov.cn/attachment/7/7951/7951817/10252464.pdf",
       "scope": "全市城镇居民",
       "incomeDefinition": "城镇居民人均全年可支配收入；广州统计信息手册2025第33页"
+    },
+    {
+      "city": "南宁",
+      "year": 2024,
+      "urbanDisposableIncomeCnyPerYear": 46381,
+      "scope": "全市城镇常住居民",
+      "incomeDefinition": "城镇居民人均年可支配收入，不是就业工资",
+      "sourceId": "nanning-2024-bulletin-reprint",
+      "sourceUrl": "https://nanning.china.com.cn/2025-05/16/content_43118751.htm"
+    },
+    {
+      "city": "昆明",
+      "year": 2025,
+      "urbanDisposableIncomeCnyPerYear": 58938,
+      "scope": "全市城镇常住居民",
+      "incomeDefinition": "城镇居民人均年可支配收入，不是就业工资",
+      "sourceId": "kunming-2025-bulletin-reprint",
+      "sourceUrl": "https://www.kunming.cn/news/c/2026-05-22/14043565.shtml"
     }
   ],
   "annualAffordability": [

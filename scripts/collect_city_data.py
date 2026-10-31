@@ -204,7 +204,9 @@ def collect(config, offline=False, refresh=False, interval=1.0):
             if spec['parser'] == 'reviewed-evidence':
                 source.update({'status': 'reviewed-evidence', 'rawSha256': None,
                                'evidenceSha256': hashlib.sha256(body).hexdigest(), 'fetchedAt': fetched_at,
-                               'evidenceNote': '官方公开网页核读摘录；摘录哈希不是原文HTML哈希。'})
+                               'evidenceNote': ('统计公报转载网页核读摘录；媒体及原发布者见来源署名，摘录哈希不是原文HTML哈希。'
+                                                if spec.get('sourceType') == 'official-bulletin-republication' else
+                                                '官方公开网页核读摘录；摘录哈希不是原文HTML哈希。')})
             else:
                 source.update({'status': 'collected', 'rawSha256': hashlib.sha256(body).hexdigest(),
                                'fetchedAt': fetched_at, 'rawSnapshot': meta['file']})

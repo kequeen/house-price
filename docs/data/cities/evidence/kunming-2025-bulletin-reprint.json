@@ -1,0 +1,33 @@
+{
+  "sourceUrl": "https://www.kunming.cn/news/c/2026-05-22/14043565.shtml",
+  "title": "昆明市2025年国民经济和社会发展统计公报（昆明发布转载）",
+  "reviewedAt": "2026-10-31",
+  "captureKind": "manually-reviewed-published-numeric-excerpt",
+  "sourceType": "official-bulletin-republication",
+  "records": [
+    {
+      "id": "kunming-commercial-2025",
+      "city": "昆明",
+      "cityCode": "530100",
+      "period": "2025",
+      "frequency": "annual",
+      "houseType": "new-all-commercial",
+      "scope": "全市全部商品房销售，含非住宅",
+      "areaSqm": 6457300,
+      "amountCny": 54342000000,
+      "excludeFromAnnualAffordability": true,
+      "qualityNote": "公报只给全部商品房销售面积645.73万平方米、金额543.42亿元。389.27亿元为住宅投资，不能用作住宅销售金额。保留原文含磨憨等指标范围差异，收入与房屋范围未配齐，不计算住宅均价及收入比。"
+    }
+  ],
+  "incomes": [
+    {
+      "city": "昆明",
+      "year": 2025,
+      "urbanDisposableIncomeCnyPerYear": 58938,
+      "scope": "全市城镇常住居民",
+      "incomeDefinition": "城镇居民人均年可支配收入，不是就业工资",
+      "sourceId": "kunming-2025-bulletin-reprint",
+      "sourceUrl": "https://www.kunming.cn/news/c/2026-05-22/14043565.shtml"
+    }
+  ]
+}

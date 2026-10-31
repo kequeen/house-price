@@ -1,0 +1,31 @@
+{
+  "sourceUrl": "https://nanning.china.com.cn/2025-05/16/content_43118751.htm",
+  "title": "2024年南宁市国民经济和社会发展统计公报（中国网中国南宁转载）",
+  "reviewedAt": "2026-10-31",
+  "captureKind": "manually-reviewed-published-numeric-excerpt",
+  "sourceType": "official-bulletin-republication",
+  "records": [
+    {
+      "id": "nanning-residential-2024",
+      "city": "南宁",
+      "cityCode": "450100",
+      "period": "2024",
+      "frequency": "annual",
+      "houseType": "new-residential",
+      "scope": "南宁市全市住宅销售",
+      "areaSqm": 4705700,
+      "qualityNote": "公报原文住宅销售面积470.57万平方米。住宅投资247.97亿元是开发投资，不作为销售金额；未取得住宅销售金额，不计算价格及收入比。"
+    }
+  ],
+  "incomes": [
+    {
+      "city": "南宁",
+      "year": 2024,
+      "urbanDisposableIncomeCnyPerYear": 46381,
+      "scope": "全市城镇常住居民",
+      "incomeDefinition": "城镇居民人均年可支配收入，不是就业工资",
+      "sourceId": "nanning-2024-bulletin-reprint",
+      "sourceUrl": "https://nanning.china.com.cn/2025-05/16/content_43118751.htm"
+    }
+  ]
+}

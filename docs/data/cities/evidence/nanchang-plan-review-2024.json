@@ -1,0 +1,23 @@
+{
+  "sourceUrl": "https://zjj.nc.gov.cn/nczfbzglj/fgxw/202504/26c8af15175b4bea90498f6e955496dc.shtml",
+  "title": "南昌市2025年住房发展年度计划征求意见稿：2024年回顾",
+  "reviewedAt": "2026-10-31",
+  "captureKind": "manually-reviewed-published-numeric-excerpt",
+  "sourceType": "official-primary",
+  "records": [
+    {
+      "id": "nanchang-city-level-residential-2024",
+      "city": "南昌",
+      "cityCode": "360100",
+      "period": "2024",
+      "frequency": "annual",
+      "houseType": "new-residential",
+      "scope": "市本级新建普通商品住房（非全市）",
+      "count": 20645,
+      "areaSqm": 2449500,
+      "excludeFromAnnualAffordability": true,
+      "qualityNote": "取年度计划征求意见稿回顾中的2024年实际销售244.95万平方米、20645套；不是2025年规划目标，不是全部商品房，不等同全市口径，不配用全市收入计算。"
+    }
+  ],
+  "incomes": []
+}

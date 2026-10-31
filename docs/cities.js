@@ -52,18 +52,20 @@
   }
   function activeRecord() { return selectedRows().find(r => r.id === state.record); }
   function renderCityList() {
-    const list = D.cities.filter(c => (!state.search || (c.name + c.coverageNote).includes(state.search)) &&
+    const list = D.cities.filter(c => (!state.search || (c.name + (c.regionName || '') + c.coverageNote).includes(state.search)) &&
       (state.filter === 'all' || state.filter === 'residential' && hasResidential(c) || state.filter === 'ratio' && baselineFor(c) || state.filter === 'pending' && !summaries(c).length));
     $('city-list').innerHTML = list.length ? list.map(c => `<button class="city-choice${state.city === c.id ? ' active' : ''}" data-city="${c.id}" aria-pressed="${state.city === c.id}"><b>${esc(c.name)}</b><span>${baselineFor(c) ? '可算收入比' : status(c)}</span><small>${latestFor(c) ? '最新接入 · ' + esc(periodName(latestFor(c))) : c.coverageStatus === 'blocked' ? '入口访问受限' : '尚无可用记录'}</small></button>`).join('') : '<p class="no-results">没有匹配城市。</p>';
   }
   function sourceCard(id) {
     const source = sources.get(id); if (!source) return '';
     const excerpt = source.status === 'reviewed-evidence', hash = excerpt ? source.evidenceSha256 : source.rawSha256;
-    const label = excerpt ? '官方网页核读摘录' : source.status === 'collected' ? '已读取原文' : '保留上一版，待复核';
+    const label = excerpt ? (source.sourceType === 'official-bulletin-republication' ? '统计公报转载核读摘录' : '官方网页核读摘录') : source.status === 'collected' ? '已读取原文' : '保留上一版，待复核';
     return `<article class="city-source-card"><span>${esc(source.provider)}${source.kind === 'statistics' ? ' · 统计销售 / 收入口径' : ' · 住建公开统计'}</span><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)} ↗</a><small>发布：${esc(source.publishedAt ? source.publishedAt.slice(0, 10) : '原文未标明日期')} · 核读 / 采集：${esc((source.fetchedAt || '').slice(0, 10) || '未记录')} · ${label}</small><small title="${esc(hash)}">${excerpt ? '摘录' : '原文'} SHA256：${esc(hash?.slice(0, 20) || '—')}…</small>${excerpt ? `<small>${esc(source.evidenceNote)}</small><a href="${esc(source.evidenceFile.replace(/^docs\//, ''))}" target="_blank" rel="noopener noreferrer">查看数值核读摘录 ↗</a>` : ''}${source.error ? `<p>${esc(source.error)}</p>` : ''}</article>`;
   }
   function renderRecord() {
-    const c = cities.get(state.city), rows = selectedRows();
+    const c = cities.get(state.city);
+    if (state.years === 'recent' && summaries(c).length && !summaries(c).some(r => ['2025', '2026'].includes(r.period.slice(0, 4)))) state.years = 'all';
+    const rows = selectedRows();
     if (!rows.some(r => r.id === state.record)) state.record = rows[0]?.id || null;
     const r = activeRecord();
     $('city-name').textContent = c.name; $('city-description').textContent = c.coverageNote;

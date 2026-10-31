@@ -130,3 +130,5 @@ npm run build
 接口包括`/api/overview`、`/api/cities`、`/api/series`、`/api/observations`、`/api/housing`、`/api/sources`、`/api/documents`、`/api/export/prices`、`POST /api/sync`、`GET /api/sync/{id}`。
 
 后端后台任务与CLI共用数据库同步锁。中断任务30分钟无心跳后，下一次同步释放锁；正常运行只启动一个Web进程。没有外部任务队列，也没有未经用户配置的定时任务。
+
+城市版另接入广西南宁、江西南昌、云南昆明的部分2024—2025年住宅/商品房及收入资料，来源与适用范围逐条注明；不代表三省区所有城市已覆盖。
