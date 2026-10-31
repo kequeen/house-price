@@ -42,7 +42,7 @@
       "name": "广州",
       "provinceCode": "440000",
       "coverageStatus": "collected",
-      "coverageNote": "2023—2024年新建住宅现售和预售网签数据及2025年城镇收入已接入；网签与统计销售口径不同，暂不计算同年收入比。"
+      "coverageNote": "2020—2024年新建住宅现售和预售网签数据及2025年城镇收入已接入；网签与统计销售口径不同，暂不计算同年收入比。"
     },
     {
       "id": "442000",
@@ -3930,6 +3930,74 @@
           "amountCny": 266701840000,
           "excludeFromAnnualAffordability": true,
           "qualityNote": "广州统计年鉴2025表1-29：住宅现售与预售网签数据相加。2024年现售264.68、预售544.6万㎡；金额分别6193454、20476730万元。与开发企业统计销售口径不同，不进入年度收入比。"
+        }
+      ]
+    },
+    {
+      "id": "guangzhou-yearbook-2022-housing-2020-21",
+      "url": "https://tjj.gz.gov.cn/datav/admin/home/www_nj/2022/directory/01/html/01-32.htm",
+      "title": "广州统计年鉴2022 表1-32 全市房地产市场交易情况",
+      "provider": "广州市统计局、广州市住建局",
+      "kind": "housing-department",
+      "parser": "reviewed-evidence",
+      "evidenceFile": "docs/data/cities/evidence/guangzhou-yearbook-2022-housing-2020-21.json",
+      "reviewedAt": "2026-10-31",
+      "reviewedSha256": "a2ac9571d5e85e7d097aa95de6e7383a99487e654a918fb405c429c8470ab3e5",
+      "reviewedRecords": [
+        {
+          "id": "guangzhou-housing-combined-2020",
+          "city": "广州",
+          "cityCode": "440100",
+          "period": "2020",
+          "frequency": "annual",
+          "houseType": "new-residential",
+          "scope": "全市新建住宅现售及预售网签合计",
+          "count": 111468,
+          "areaSqm": 11909000,
+          "amountCny": 316148990000,
+          "excludeFromAnnualAffordability": true,
+          "qualityNote": "广州统计年鉴2022表1-32：住宅现售与预售网签数据相加。2020年现售227.26、预售963.64万㎡；金额分别5768274、25846625万元。与开发企业统计销售口径不同，不进入年度收入比。"
+        },
+        {
+          "id": "guangzhou-housing-combined-2021",
+          "city": "广州",
+          "cityCode": "440100",
+          "period": "2021",
+          "frequency": "annual",
+          "houseType": "new-residential",
+          "scope": "全市新建住宅现售及预售网签合计",
+          "count": 116082,
+          "areaSqm": 12416300,
+          "amountCny": 393267770000,
+          "excludeFromAnnualAffordability": true,
+          "qualityNote": "广州统计年鉴2022表1-32：住宅现售与预售网签数据相加。2021年现售209.11、预售1032.52万㎡；金额分别5805076、33521701万元。与开发企业统计销售口径不同，不进入年度收入比。"
+        }
+      ]
+    },
+    {
+      "id": "guangzhou-yearbook-2023-housing-2022",
+      "url": "https://tjj.gz.gov.cn/datav/admin/home/www_nj/2023/directory/01/html/01-32.htm",
+      "title": "广州统计年鉴2023 表1-32 全市房地产市场交易情况",
+      "provider": "广州市统计局、广州市住建局",
+      "kind": "housing-department",
+      "parser": "reviewed-evidence",
+      "evidenceFile": "docs/data/cities/evidence/guangzhou-yearbook-2023-housing-2022.json",
+      "reviewedAt": "2026-10-31",
+      "reviewedSha256": "345aec545157de997d059c021a40006e41f31359c6120b3ef21170c8d7022fff",
+      "reviewedRecords": [
+        {
+          "id": "guangzhou-housing-combined-2022",
+          "city": "广州",
+          "cityCode": "440100",
+          "period": "2022",
+          "frequency": "annual",
+          "houseType": "new-residential",
+          "scope": "全市新建住宅现售及预售网签合计",
+          "count": 81331,
+          "areaSqm": 8722200,
+          "amountCny": 291010100000,
+          "excludeFromAnnualAffordability": true,
+          "qualityNote": "广州统计年鉴2023表1-32：住宅现售与预售网签数据相加。2022年现售187.64、预售684.58万㎡；金额分别4020262、25080748万元。与开发企业统计销售口径不同，不进入年度收入比。"
         }
       ]
     }
